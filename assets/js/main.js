@@ -36,3 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver(observerCallback, observerOptions);
   sections.forEach(section => observer.observe(section));
 });
+
+window.addEventListener('scroll',()=>{
+ const p=document.getElementById('scroll-progress');
+ if(!p) return;
+ const h=document.documentElement;
+ const sc=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+ p.style.cssText='position:fixed;top:0;left:0;height:3px;z-index:9999;background:linear-gradient(90deg,#00a3ff,#7b61ff);width:'+sc+'%';
+});
