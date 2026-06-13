@@ -441,3 +441,95 @@ body {
     max-width: 100% !important;
   }
 }
+
+/* ===== FUSION V4 PS2 INSPIRED BACKGROUND ===== */
+body::before{
+content:'';
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at 20% 20%, rgba(0,163,255,.18), transparent 30%),
+radial-gradient(circle at 80% 30%, rgba(123,97,255,.15), transparent 35%),
+radial-gradient(circle at 50% 80%, rgba(0,229,255,.12), transparent 40%);
+pointer-events:none;
+animation: auroraFloat 18s ease-in-out infinite alternate;
+z-index:-3;
+}
+
+body::after{
+content:'AI_ENGINE   CYBERSECURITY   GOOGLE_CLOUD   BIGQUERY   DATA_ANALYTICS   GEMINI_API';
+position:fixed;
+inset:0;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:clamp(12px,1vw,16px);
+letter-spacing:10px;
+opacity:.035;
+color:#7dd3fc;
+pointer-events:none;
+transform:rotate(-8deg);
+z-index:-2;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:
+repeating-linear-gradient(90deg,
+transparent 0 120px,
+rgba(0,163,255,.05) 120px 122px,
+transparent 122px 240px);
+filter:blur(1px);
+animation: ps2Columns 25s linear infinite;
+pointer-events:none;
+}
+
+.profile-image-wrapper{
+box-shadow:0 0 60px rgba(0,163,255,.25),0 0 120px rgba(123,97,255,.15);
+animation: pulseGlow 8s ease-in-out infinite;
+}
+
+.card,.project-card,.certification-card{
+transition:transform .35s ease, box-shadow .35s ease;
+}
+
+.card:hover,.project-card:hover,.certification-card:hover{
+transform:translateY(-6px) scale(1.02);
+box-shadow:0 15px 40px rgba(0,163,255,.15);
+}
+
+@keyframes auroraFloat{
+0%{transform:translate3d(0,0,0) scale(1);}
+100%{transform:translate3d(0,-20px,0) scale(1.08);}
+}
+
+@keyframes ps2Columns{
+from{transform:translateX(-40px);}
+to{transform:translateX(40px);}
+}
+
+@keyframes pulseGlow{
+0%,100%{filter:brightness(1);}
+50%{filter:brightness(1.08);}
+}
+
+#boot-loader{
+position:fixed;inset:0;z-index:100000;
+display:flex;align-items:center;justify-content:center;
+background:#050816;
+backdrop-filter:blur(8px);
+transition:opacity .8s ease;
+}
+#boot-loader:before{
+content:'';position:absolute;inset:0;
+background:radial-gradient(circle,rgba(0,163,255,.25),transparent 60%);
+animation:pulse 5s infinite;
+}
+.boot-panel{position:relative;text-align:center;max-width:600px;padding:2rem;}
+.progress{height:6px;background:rgba(255,255,255,.08);margin:1rem 0;overflow:hidden;border-radius:99px;}
+.bar{height:100%;width:100%;background:linear-gradient(90deg,#00a3ff,#7b61ff);animation:loadbar 2.5s linear;}
+#sound-toggle{margin-top:1rem;}
+@keyframes loadbar{from{width:0%}to{width:100%}}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
