@@ -14,6 +14,20 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+<div id="boot-loader">
+  <div class="boot-panel">
+    <h1>ALFREDO CASTRO</h1>
+    <p>AI • CLOUD • CYBERSECURITY • DATA</p>
+    <div class="progress"><div class="bar"></div></div>
+    <div id="boot-status">Initializing secure portfolio environment...</div>
+    <button id="sound-toggle">🔇 Sound</button>
+    <audio id="boot-audio" preload="auto">
+      <source src="assets/boot-chime.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+</div>
+
+<div id="scroll-progress"></div>
 
   <!-- NAVBAR GLASSMORPHISM -->
   <nav class="navbar">
@@ -101,13 +115,13 @@
         </div>
         <h3 class="card-title">Redes y Conectividad</h3>
         <p class="card-description">
-          Diseño, configuración y diagnóstico de infraestructuras de datos. Dominio en esquemas de direccionamiento IPv4/IPv6, modelos conceptuales de red y administración de entornos conmutados y enrutados bajo estándares de la industria[cite: 2].
+          Diseño, configuración y diagnóstico de infraestructuras de datos. Dominio en esquemas de direccionamiento IPv4/IPv6, modelos conceptuales de red y administración de entornos conmutados y enrutados bajo estándares de la industria.
         </p>
         <div class="card-actions-row">
           <div class="card-tags">
-            <span>Networking[cite: 2]</span>
-            <span>Cisco CCST[cite: 2]</span>
-            <span>Enrutamiento[cite: 2]</span>
+            <span>Networking</span>
+            <span>Cisco CCST</span>
+            <span>Enrutamiento</span>
           </div>
         </div>
       </div>
@@ -122,13 +136,13 @@
         </div>
         <h3 class="card-title">Ciberseguridad y SecOps</h3>
         <p class="card-description">
-          Implementación de políticas de seguridad perimetral, análisis sistemático de amenazas, protección de datos y mitigación de vulnerabilidades en arquitecturas tecnológicas desacopladas[cite: 3].
+          Implementación de políticas de seguridad perimetral, análisis sistemático de amenazas, protección de datos y mitigación de vulnerabilidades en arquitecturas tecnológicas desacopladas.
         </p>
         <div class="card-actions-row">
           <div class="card-tags">
-            <span>Ciberdefensa[cite: 3]</span>
-            <span>Threat Analysis[cite: 3]</span>
-            <span>Seguridad[cite: 3]</span>
+            <span>Ciberdefensa</span>
+            <span>Threat Analysis</span>
+            <span>Seguridad</span>
           </div>
         </div>
       </div>
@@ -143,13 +157,13 @@
         </div>
         <h3 class="card-title">Project Management TI</h3>
         <p class="card-description">
-          Planificación y control estratégico de proyectos de software y telecomunicaciones[cite: 1]. Capacidad certificada para la estructuración de presupuestos, mitigación de riesgos y dirección mediante marcos ágiles[cite: 1].
+          Planificación y control estratégico de proyectos de software y telecomunicaciones. Capacidad certificada para la estructuración de presupuestos, mitigación de riesgos y dirección mediante marcos ágiles.
         </p>
         <div class="card-actions-row">
           <div class="card-tags">
-            <span>Marcos Ágiles[cite: 1]</span>
-            <span>Control de Riesgos[cite: 1]</span>
-            <span>Gestión TI[cite: 1]</span>
+            <span>Marcos Ágiles</span>
+            <span>Control de Riesgos</span>
+            <span>Gestión TI</span>
           </div>
         </div>
       </div>
@@ -607,7 +621,7 @@
         <span class="timeline-category text-purple">GESTIÓN TECNOLÓGICA</span>
         <h3 class="timeline-title">Certificación Avanzada en Gestión de Proyectos TI</h3>
         <p class="timeline-text">
-          Validación institucional en Duoc UC para liderar, presupuestar y mitigar riesgos en proyectos de software y telecomunicaciones. Integración de marcos de trabajo tradicionales y ágiles para asegurar la calidad y la escalabilidad del producto final[cite: 1].
+          Validación institucional en Duoc UC para liderar, presupuestar y mitigar riesgos en proyectos de software y telecomunicaciones. Integración de marcos de trabajo tradicionales y ágiles para asegurar la calidad y la escalabilidad del producto final.
         </p>
       </div>
 
@@ -627,7 +641,7 @@
         <span class="timeline-category text-purple">PRESENTE Y FUTURO</span>
         <h3 class="timeline-title">Ingeniería y Certificaciones Oficiales Cisco</h3>
         <p class="timeline-text">
-          Fase de culminación académica en Ingeniería en Informática y Telecomunicaciones. Consolidación del perfil mediante la obtención de credenciales internacionales en redes (CCST Networking)[cite: 2] y ciberdefensa (CCST Cybersecurity)[cite: 3], proyectando soluciones de infraestructura segura bajo la marca AbcaLink.
+          Fase de culminación académica en Ingeniería en Informática y Telecomunicaciones. Consolidación del perfil mediante la obtención de credenciales internacionales en redes (CCST Networking) y ciberdefensa (CCST Cybersecurity), proyectando soluciones de infraestructura segura bajo la marca AbcaLink.
         </p>
       </div>
 
@@ -635,5 +649,43 @@
   </section>
 
   <script src="./assets/js/main.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const loader=document.getElementById('boot-loader');
+ const status=document.getElementById('boot-status');
+ const btn=document.getElementById('sound-toggle');
+ const audio=document.getElementById('boot-audio');
+
+ let enabled=localStorage.getItem('portfolio_sound')==='on';
+
+ btn.textContent=enabled?'🔊 Sound':'🔇 Sound';
+
+ btn.onclick=()=>{
+   enabled=!enabled;
+   localStorage.setItem('portfolio_sound',enabled?'on':'off');
+   btn.textContent=enabled?'🔊 Sound':'🔇 Sound';
+ };
+
+ const steps=[
+ 'Loading certifications...',
+ 'Syncing projects...',
+ 'Establishing cloud connection...',
+ 'Portfolio ready.'
+ ];
+
+ let i=0;
+ const t=setInterval(()=>{
+   if(i<steps.length){status.textContent=steps[i++];}
+ },500);
+
+ setTimeout(()=>{
+   clearInterval(t);
+   if(enabled){ audio.play().catch(()=>{}); }
+   loader.style.opacity='0';
+   setTimeout(()=>loader.remove(),800);
+ },2600);
+});
+</script>
 </body>
 </html>
