@@ -3,690 +3,629 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alfredo Castro Alarcón | Portafolio Profesional</title>
+  <title>Alfredo Castro Alarcón | Portafolio Profesional v2</title>
   
-  <!-- Fuentes Profesionales e Iconografía -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/variables.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/sections/loader.css">
+  <link rel="stylesheet" href="./assets/css/sections/about.css">
+  <link rel="stylesheet" href="./assets/css/sections/projects.css">
+  <link rel="stylesheet" href="./assets/css/sections/certifications.css">
+  <link rel="stylesheet" href="./assets/css/sections/experience.css">
 </head>
-<body>
-<div id="boot-loader">
-  <div class="boot-panel">
-    <h1>ALFREDO CASTRO</h1>
-    <p>AI • CLOUD • CYBERSECURITY • DATA</p>
-    <div class="progress"><div class="bar"></div></div>
-    <div id="boot-status">Initializing secure portfolio environment...</div>
-    <button id="sound-toggle">🔇 Sound</button>
-    <audio id="boot-audio" preload="auto">
-      <source src="assets/boot-chime.mp3" type="audio/mpeg">
-    </audio>
+<body style="background-color:#02040a87;">
+
+  <canvas id="cyber-matrix-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+
+  <div id="boot-loader">
+    <div class="boot-panel">
+      <h1>ALFREDO CASTRO</h1>
+      <p>ENGINEERING • NETWORKS • CLOUD • SECURITY</p>
+      <div class="progress-container">
+        <div class="progress-bar"></div>
+      </div>
+      <div id="boot-status">Initializing architecture...</div>
+      <button id="sound-toggle" style="margin-top: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">🔇 Sound</button>
+      <audio id="boot-audio" preload="auto">
+        <source src="assets/boot-chime.mp3" type="audio/mpeg">
+      </audio>
+    </div>
   </div>
+
+  <div id="scroll-progress"></div>
+
+  <div class="app-layout">
+    
+    <nav class="navbar" style="position: fixed; top: 0; left: 0; width: 100%; height: 70px; background: rgba(2, 4, 10, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); z-index: 1000; display: flex; align-items: center;">
+      <div class="nav-container" style="width: 100%; max-width: 1300px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center;">
+        
+        <a href="#home" class="nav-logo" style="font-weight: 800; font-size: 1.25rem; text-decoration: none; color: #fff; letter-spacing: -0.5px;">Abca<span class="text-gradient">Link</span></a>
+        
+        <ul class="nav-menu" style="display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0;">
+          <li><a href="#home" class="nav-link active" style="color: var(--accent-blue); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: color 0.2s;">Inicio</a></li>
+          <li><a href="#skills-competencies" class="nav-link" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s;">Habilidades</a></li>
+          <li><a href="#certifications" class="nav-link" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s;">Certificaciones</a></li>
+          <li><a href="#experience" class="nav-link" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s;">Trayectoria</a></li>
+          
+          <li class="nav-dropdown-wrapper" style="position: relative; cursor: pointer; padding: 10px 0;">
+            <span class="nav-link" style="color: rgba(255,255,255,0.7); font-size: 0.9rem; font-weight: 500; display: flex; align-items: center; gap: 6px;">
+              Proyectos & Más <i class="fas fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.2s;"></i>
+            </span>
+            <ul class="nav-dropdown" style="position: absolute; top: 100%; right: 50%; transform: translateX(50%); background: #0b111e; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; width: 220px; padding: 8px 0; list-style: none; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: none; opacity: 0; transition: opacity 0.2s ease;">
+              <li><a href="#academic-projects" style="display: block; padding: 10px 18px; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; transition: background 0.2s, color 0.2s;">Proyectos Aula</a></li>
+              <li><a href="#big-data" style="display: block; padding: 10px 18px; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; transition: background 0.2s, color 0.2s;">Análisis & BD</a></li>
+              <li><a href="#freelance-projects" style="display: block; padding: 10px 18px; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; transition: background 0.2s, color 0.2s;">Freelance</a></li>
+              <li><a href="#future-projects" style="display: block; padding: 10px 18px; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; transition: background 0.2s, color 0.2s;">I+D Futuro</a></li>
+              <li style="border-top: 1px solid rgba(255,255,255,0.05); margin-top: 6px; padding-top: 6px;"></li>
+              <li><a href="#hobbies" style="display: block; padding: 10px 18px; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; transition: background 0.2s, color 0.2s;"><i class="fas fa-masks-theater" style="margin-right: 6px; font-size: 0.8rem; color: #a855f7;"></i> Hobbies</a></li>
+            </ul>
+          </li>
+        </ul>
+        
+        <div class="nav-actions" style="display: flex; align-items: center; gap: 16px;">
+          <button id="theme-toggle" class="btn-theme" aria-label="Cambiar modo de luz" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.8); width: 38px; height: 38px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s;">
+            <i class="fas fa-moon"></i>
+          </button>
+          <a href="https://wa.me/56946371223?text=Hola%20Alfredo,%20estuve%20revisando%20tu%20portafolio%20web%20y%20me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20tu%20experiencia,%20proyectos%20y%20%C3%A1reas%20de%20especializaci%C3%B3n." target="_blank" class="btn-contact" style="background: transparent; border: 1px solid var(--accent-blue); color: #fff; padding: 8px 18px; border-radius: 8px; text-decoration: none; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: all 0.2s; box-shadow: 0 0 12px rgba(14,165,227,0.15);">
+            <i class="fab fa-whatsapp" style="color: #25d366;"></i> Contactar
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content" style="padding-top: 80px;">
+      
+      <header id="home" class="section-container" style="min-height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div style="max-width: 800px; width: 100%;">
+          <span style="color: var(--accent-blue); font-weight: 700; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 12px;">Ingeniería, Innovación y Ciberseguridad</span>
+          <h1 style="font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 25px; letter-spacing: -1px;">Alfredo Benjamín <br><span class="text-gradient">Castro Alarcón</span></h1>
+          
+          <div class="about-image-container" style="margin: 0 auto 30px auto; width: 180px; height: 180px; position: relative;">
+            <img src="./neoalfred.png" alt="Alfredo Benjamín Castro Alarcón" class="about-img" style="border-radius: 50%; width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-primary)'">
+            <div style="position: absolute; bottom: -5px; left: 50%; transform: translateX(-50%); background: rgba(14, 165, 227, 0.9); padding: 4px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; white-space: nowrap; display: flex; align-items: center; gap: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+              <i class="fas fa-shield-halved"></i> ABCA SECURITY
+            </div>
+          </div>
+
+          <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.6; margin-bottom: 32px; max-width: 650px; margin-left: auto; margin-right: auto;">
+            Estudiante de último año de <strong>Ingeniería en Informática y Telecomunicaciones en Duoc UC</strong>. Especialista en Gestión de Proyectos TI, redes y ciberdefensa bajo el sello de desarrollo propio <strong>AbcaLink</strong>.
+          </p>
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="#certifications" class="btn-contact" style="box-shadow: none; padding: 12px 28px;">Ver Certificaciones</a>
+            <a href="https://github.com/Alphareone" target="_blank" class="nav-link" style="border: 1px solid var(--border-card); padding: 10px 24px; border-radius: var(--radius-md); display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.02);"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://linkedin.com/in/alfredo-benjamin-castro-alarcon-b237053b0" target="_blank" class="nav-link" style="border: 1px solid rgba(0,119,181,0.3); padding: 10px 24px; border-radius: var(--radius-md); display: flex; align-items: center; gap: 8px; background: rgba(0,119,181,0.05); color: #0077b5;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          </div>
+        </div>
+      </header>
+
+      <section id="skills-competencies" class="section-container">
+        <h2 class="section-title">Habilidades & <span class="text-gradient">Competencias</span></h2>
+        <p style="color: var(--text-secondary); text-align: center; margin-top: -10px; margin-bottom: 45px; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+          Equilibrio estratégico entre el dominio tecnológico de infraestructura y la capacidad operativa para liderar soluciones eficientes.
+        </p>
+        
+        <div class="projects-grid">
+          <div class="project-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+              <div style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fas fa-network-wired"></i></div>
+              <span style="font-size: 0.75rem; background: rgba(14,165,227,0.1); color: var(--accent-blue); padding: 4px 10px; border-radius: 12px; font-weight: 600;">Hard Skills</span>
+            </div>
+            <h3>Redes y Conectividad</h3>
+            <p>Diseño, configuración y diagnóstico de infraestructuras de datos. Dominio en esquemas de direccionamiento IPv4/IPv6, modelos conceptuales de red y administración de entornos conmutados y enrutados bajo estándares de la industria.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 15px;">
+              <span class="tech-tag">Networking</span><span class="tech-tag">Cisco CCST</span><span class="tech-tag">Enrutamiento</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+              <div style="color: #a855f7; font-size: 1.5rem;"><i class="fas fa-user-shield"></i></div>
+              <span style="font-size: 0.75rem; background: rgba(168,85,247,0.1); color: #a855f7; padding: 4px 10px; border-radius: 12px; font-weight: 600;">Defensa TI</span>
+            </div>
+            <h3>Ciberseguridad y SecOps</h3>
+            <p>Implementación de políticas de seguridad perimetral, análisis sistemático de amenazas, protección de datos y mitigación de vulnerabilidades en arquitecturas tecnológicas desacopladas.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 15px;">
+              <span class="tech-tag">Ciberdefensa</span><span class="tech-tag">Threat Analysis</span><span class="tech-tag">Seguridad</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+              <div style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fas fa-tasks"></i></div>
+              <span style="font-size: 0.75rem; background: rgba(14,165,227,0.1); color: var(--accent-blue); padding: 4px 10px; border-radius: 12px; font-weight: 600;">Gestión Estratégica</span>
+            </div>
+            <h3>Project Management TI</h3>
+            <p>Planificación y control estratégico de proyectos de software y telecomunicaciones. Capacidad certificada para la estructuración de presupuestos, mitigación de riesgos y dirección mediante marcos ágiles.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 15px;">
+              <span class="tech-tag">Marcos Ágiles</span><span class="tech-tag">Control de Riesgos</span><span class="tech-tag">Gestión TI</span>
+            </div>
+          </div>
+
+          <div class="project-card" style="grid-column: 1 / -1; border-style: dashed; border-color: rgba(168, 85, 247, 0.35);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+              <div style="color: #a855f7; font-size: 1.5rem;"><i class="fas fa-handshake"></i></div>
+              <span style="font-size: 0.75rem; background: rgba(168,85,247,0.1); color: #a855f7; padding: 4px 10px; border-radius: 12px; font-weight: 600;">Fortalezas Destacadas</span>
+            </div>
+            <h3>Resiliencia Operativa y Liderazgo en Crisis</h3>
+            <p>Capacidad probada para coordinar tareas logísticas críticas y resolver problemas complejos bajo escenarios de alta presión y contingencia extrema, combinando disciplina táctica con una toma de decisiones analítica y asertiva.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 15px;">
+              <span class="tech-tag">Liderazgo Operativo</span><span class="tech-tag">Logística Crítica</span><span class="tech-tag">Toma de Decisiones</span><span class="tech-tag">Trabajo Bajo Presión</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="certifications" class="section-container">
+        <h2 class="section-title">Certificaciones & <span class="text-gradient">Credenciales</span></h2>
+        <p style="color: var(--text-secondary); text-align: center; margin-top: -10px; margin-bottom: 45px; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+          Validaciones internacionales emitidas por Cisco y Certiport que avalan mis competencias técnicas en infraestructura, conectividad y ciberdefensa.
+        </p>
+
+        <div class="certifications-grid">
+          <div class="cert-card" style="border: 1px solid rgba(14, 165, 233, 0.25); background: rgba(14, 165, 233, 0.02);">
+            <div class="cert-icon-wrapper"><i class="fas fa-network-wired" style="color: #0ea5e3;"></i></div>
+            <div class="cert-info">
+              <h3>Cisco CCST Networking</h3>
+              <p>Credencial internacional verificada vía Credly. Certifica conocimientos sólidos en fundamentos de redes, direccionamiento IP, medios de transmisión, topologías, enrutamiento y diagnóstico de conectividad.</p>
+              <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem;">
+                <span style="color: var(--text-secondary);">Vence: Jun 2031</span>
+                <a href="https://www.credly.com" target="_blank" style="color: var(--accent-blue); text-decoration: none; font-weight: 600;">Verificar <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cert-card" style="border: 1px solid rgba(168, 85, 247, 0.25); background: rgba(168, 85, 247, 0.02);">
+            <div class="cert-icon-wrapper"><i class="fas fa-shield-alt" style="color: #a855f7;"></i></div>
+            <div class="cert-info">
+              <h3>Cisco CCST Cybersecurity</h3>
+              <p>Credencial internacional que valida principios fundamentales de seguridad, seguridad de redes, metodologías de análisis de amenazas, políticas de mitigación de riesgos y resguardo de datos perimetrales.</p>
+              <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem;">
+                <span style="color: var(--text-secondary);">Vence: Jun 2031</span>
+                <a href="https://www.credly.com" target="_blank" style="color: #a855f7; text-decoration: none; font-weight: 600;">Verificar <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon-wrapper"><i class="fas fa-user-lock"></i></div>
+            <div class="cert-info">
+              <h3>Certiport Network Security (Pearson VUE)</h3>
+              <p>Certificación oficial emitida por Certiport que respalda competencias operativas aplicadas a arquitecturas de conectividad protegidas y entornos corporativos seguros.</p>
+              <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem;">
+                <span style="color: var(--text-secondary);">Vence: Jun 2031</span>
+                <a href="https://www.credly.com" target="_blank" style="color: var(--accent-blue); text-decoration: none; font-weight: 600;">Ver Credencial <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 40px; background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.03); padding: 25px; border-radius: var(--radius-md);">
+          <h4 style="margin-bottom: 15px; color: #fff; font-size: 1.1rem;"><i class="fas fa-graduation-cap" style="color: var(--accent-blue); margin-right: 8px;"></i> Hitos Cisco Networking Academy (2026)</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+            <div style="background: rgba(0,0,0,0.15); padding: 12px; border-radius: 8px; border-left: 3px solid #0ea5e3;">
+              <h5 style="margin-bottom: 2px; font-size: 0.85rem;">Conceptos Básicos de Redes</h5>
+              <span style="font-size: 0.75rem; color: var(--text-secondary);">Comunicaciones, Protocolos e Internet</span>
+            </div>
+            <div style="background: rgba(0,0,0,0.15); padding: 12px; border-radius: 8px; border-left: 3px solid #a855f7;">
+              <h5 style="margin-bottom: 2px; font-size: 0.85rem;">Defensa de la Red y SecOps</h5>
+              <span style="font-size: 0.75rem; color: var(--text-secondary);">Análisis de Amenazas y Salvaguardas</span>
+            </div>
+            <div style="background: rgba(0,0,0,0.15); padding: 12px; border-radius: 8px; border-left: 3px solid #0ea5e3;">
+              <h5 style="margin-bottom: 2px; font-size: 0.85rem;">Introducción a Packet Tracer</h5>
+              <span style="font-size: 0.75rem; color: var(--text-secondary);">Simulación y Modelado de Arquitecturas</span>
+            </div>
+            <div style="background: rgba(0,0,0,0.15); padding: 12px; border-radius: 8px; border-left: 3px solid #a855f7;">
+              <h5 style="margin-bottom: 2px; font-size: 0.85rem;">Introducción a la Ciberseguridad</h5>
+              <span style="font-size: 0.75rem; color: var(--text-secondary);">Insignia Verificada por Cisco Academies</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="academic-projects" class="section-container">
+        <h2 class="section-title">Desarrollos e Integraciones <span class="text-gradient">en Equipo</span></h2>
+        <p style="color: var(--text-secondary); text-align: center; margin-top: -10px; margin-bottom: 45px; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+          Soluciones de software construidas colaborativamente en el aula junto a mis compañeros de carrera, aplicando metodologías de integración real.
+        </p>
+        
+        <div class="projects-grid">
+          <div class="project-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <div style="color: #a855f7; font-size: 1.3rem;"><i class="fas fa-leaf"></i></div>
+              <span style="font-size: 0.7rem; background: rgba(168,85,247,0.1); color: #a855f7; padding: 2px 8px; border-radius: 10px;">Proyecto de Aula</span>
+            </div>
+            <h3>Carbono App</h3>
+            <p>Aplicación orientada al monitoreo de la huella ecológica institucional y control de recursos sostenibles. Desarrollada en equipo, la solución implementa la lógica de negocio básica para capturar datos e indicadores ambientales clave.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+              <div style="display: flex; gap: 6px;"><span class="tech-tag">Sustentabilidad</span><span class="tech-tag">Teamwork</span></div>
+              <a href="https://github.com/Alphareone" target="_blank" style="color: var(--text-primary); font-size: 1.1rem;"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <div style="color: #a855f7; font-size: 1.3rem;"><i class="fas fa-cubes"></i></div>
+              <span style="font-size: 0.7rem; background: rgba(168,85,247,0.1); color: #a855f7; padding: 2px 8px; border-radius: 10px;">Integración TI</span>
+            </div>
+            <h3>Edutech Microservices</h3>
+            <p>Proyecto integrador Full-Stack enfocado en la arquitectura desacoplada. Se centra en la comunicación estructurada entre módulos mediante microservicios independientes, simulando el flujo de una plataforma educativa real.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+              <div style="display: flex; gap: 6px;"><span class="tech-tag">Microservicios</span><span class="tech-tag">Full-Stack</span></div>
+              <a href="https://github.com/Alphareone" target="_blank" style="color: var(--text-primary); font-size: 1.1rem;"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <!-- CORREGIDO: Se agregaron las comillas de cierre faltantes después de 12px; y se arregló el justify-content -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <div style="color: #a855f7; font-size: 1.3rem;"><i class="fas fa-users"></i></div>
+              <span style="font-size: 0.7rem; background: rgba(168,85,247,0.1); color: #a855f7; padding: 2px 8px; border-radius: 10px;">Prototipo FE</span>
+            </div>
+            <h3>Conectavecino</h3>
+            <p>Prototipo de plataforma vecinal interactiva diseñada para robustecer la comunicación comunitaria. Interfaz limpia construida mediante maquetación semántica y hojas de estilo fluidas, incorporando dinamismo funcional interactivo básico.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+              <div style="display: flex; gap: 6px;"><span class="tech-tag">HTML5 / CSS3</span><span class="tech-tag">JavaScript</span></div>
+              <a href="https://github.com/Alphareone" target="_blank" style="color: var(--text-primary); font-size: 1.1rem;"><i class="fab fa-github"></i></a>
+            </div>
 </div>
-
-<div id="scroll-progress"></div>
-
-  <!-- NAVBAR GLASSMORPHISM -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo">Abca<span class="text-gradient">Link</span></a>
-      <ul class="nav-menu">
-        <li><a href="#hero" class="nav-link active">Perfil</a></li>
-        <li><a href="#certifications" class="nav-link">Certificaciones</a></li>
-        <li><a href="#skills-competencies" class="nav-link">Habilidades</a></li> <!-- NUEVO ENLACE -->
-        <li><a href="#academic-projects" class="nav-link">Proyectos de Aula</a></li>
-        <li><a href="#big-data" class="nav-link">Análisis & BD</a></li>
-        <li><a href="#freelance-projects" class="nav-link">Freelance</a></li>
-        <li><a href="#future-projects" class="nav-link">I+D Futuro</a></li>
-        <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
-        <li><a href="#trajectory" class="nav-link">Trayectoria</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button id="theme-toggle" class="btn-theme" aria-label="Cambiar modo de luz">
-          <i class="fas fa-moon"></i>
-        </button>
-          <a href="https://wa.me/56946371223?text=Hola%20Alfredo,%20estuve%20revisando%20tu%20portafolio%20web%20y%20me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20tu%20experiencia,%20proyectos%20y%20%C3%A1reas%20de%20especializaci%C3%B3n." target="_blank" class="btn-contact">
-            <i class="fab fa-whatsapp"></i> Contactar
-          </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- SECCIÓN HERO -->
-  <header class="hero" id="hero">
-    <div class="visual-glow top-glow"></div>
-    
-    <div class="hero-container-vertical">
-      <span class="badge-tech">Ingeniería, Innovación y Ciberseguridad</span>
-      
-      <h1 class="hero-title-center">
-        Alfredo Benjamín <br>
-        <span class="text-gradient">Castro Alarcón</span>
-      </h1>
-      
-      <!-- LA FOTO AHORA SE SITÚA AQUÍ -->
-      <div class="hero-visual-center">
-        <div class="profile-image-wrapper">
-          <img src="./Alfred.jpg" alt="Alfredo Benjamín Castro Alarcón" class="profile-img">
-          <div class="brand-mascot-overlay">
-            <i class="fas fa-shield-halved"></i> 
-            <span>ABCA SECURITY</span>
-          </div>
         </div>
-      </div>
-      
-      <p class="hero-subtitle-center">
-        Estudiante de último año de <strong>Ingeniería en Informática y Telecomunicaciones en Duoc UC</strong>. Especialista en Gestión de Proyectos TI, redes y ciberdefensa bajo el sello de desarrollo propio <strong>AbcaLink</strong>.
-      </p>
-      
-      <div class="hero-buttons-center">
-        <a href="#certifications" class="btn-primary">Ver Certificaciones</a>
-        <a href="https://github.com/Alphareone" target="_blank" class="btn-secondary">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://linkedin.com/in/alfredo-benjamin-castro-alarcon-b237053b0" target="_blank" class="btn-linkedin">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-      </div>
-    </div>
-  </header>
+      </section>
 
-  <!-- ==========================================
-       SECCIÓN: HABILIDADES, FORTALEZAS Y COMPETENCIAS
-       ========================================== -->
-  <section id="skills-competencies" class="projects-section" style="border-top: 1px solid rgba(255, 255, 255, 0.03); padding-top: 60px;">
-    <h2 class="section-title">Habilidades & <span class="text-gradient">Competencias</span></h2>
-    <p style="color: var(--text-secondary); text-align: center; margin-top: -30px; margin-bottom: 45px; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-      Equilibrio estratégico entre el dominio tecnológico de infraestructura y la capacidad operativa para liderar soluciones eficientes.
-    </p>
-    
-    <div class="projects-grid">
-      
-      <!-- Categoría 1: Redes e Infraestructura -->
-      <div class="project-card">
-        <div class="card-header">
-          <div class="icon-box blue-icon">
-            <i class="fas fa-network-wired"></i>
-          </div>
-          <span class="card-badge badge-blue">Hard Skills</span>
-        </div>
-        <h3 class="card-title">Redes y Conectividad</h3>
-        <p class="card-description">
-          Diseño, configuración y diagnóstico de infraestructuras de datos. Dominio en esquemas de direccionamiento IPv4/IPv6, modelos conceptuales de red y administración de entornos conmutados y enrutados bajo estándares de la industria.
+      <section id="big-data" class="section-container">
+        <h2 class="section-title">Análisis de Datos & <span class="text-gradient">Big Data</span></h2>
+        <p style="color: var(--text-secondary); text-align: center; margin-top: -10px; margin-bottom: 45px; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+          Actividades evaluativas y laboratorios recientes de procesamiento de datos a gran escala, ejecutados cooperativamente en células de análisis.
         </p>
-        <div class="card-actions-row">
-          <div class="card-tags">
-            <span>Networking</span>
-            <span>Cisco CCST</span>
-            <span>Enrutamiento</span>
+        
+        <div class="projects-grid">
+          <div class="project-card" style="grid-column: 1 / -1; max-width: 750px; margin: 0 auto; width: 100%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+              <div style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fas fa-chart-pie"></i></div>
+              <span style="font-size: 0.75rem; background: rgba(14,165,227,0.1); color: var(--accent-blue); padding: 4px 10px; border-radius: 12px; font-weight: 600;">Casos de Estudio</span>
+            </div>
+            <h3>Análisis de Negocios e Ingesta con Herramientas BI</h3>
+            <p>Procesamiento de datos mediante la escritura de consultas optimizadas en Google BigQuery para la extracción y depuración de métricas. Conexión de repositorios de datos hacia cuadros de mando interactivos en Power BI, enfocados en la detección de patrones críticos de negocio.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+              <div style="display: flex; gap: 8px;"><span class="tech-tag">Google BigQuery</span><span class="tech-tag">Power BI</span><span class="tech-tag">Célula de Datos</span></div>
+              <a href="https://github.com/Alphareone" target="_blank" style="color: var(--text-primary); font-size: 1.2rem;"><i class="fab fa-github"></i></a>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Categoría 2: Ciberseguridad -->
-      <div class="project-card">
-        <div class="card-header">
-          <div class="icon-box purple-icon">
-            <i class="fas fa-user-shield"></i>
+      <section id="freelance-projects" class="section-container">
+        <h2 class="section-title">Soluciones para <span class="text-gradient">Clientes Externos</span></h2>
+        
+        <div class="projects-grid">
+          <div class="project-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <div style="color: var(--accent-blue); font-size: 1.3rem;"><i class="fas fa-gears"></i></div>
+              <span style="font-size: 0.7rem; background: rgba(14,165,227,0.1); color: var(--accent-blue); padding: 2px 8px; border-radius: 10px;">Propuesta Comercial</span>
+            </div>
+            <h3>Global Mec Landing Page</h3>
+            <p>Arquitectura backend y base de datos estructural diseñada para soportar un sistema de gestión de servicios mecánicos y automotrices. Modelado como una solución escalable para el agendamiento y control de órdenes de trabajo.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+              <div style="display: flex; gap: 6px;"><span class="tech-tag">UI/UX</span><span class="tech-tag">Base de Datos</span></div>
+              <a href="https://github.com/Alphareone" target="_blank" style="color: var(--text-primary); font-size: 1.1rem;"><i class="fab fa-github"></i></a>
+            </div>
           </div>
-          <span class="card-badge badge-purple">Defensa TI</span>
+
+          <div class="project-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <div style="color: #a855f7; font-size: 1.3rem;"><i class="fas fa-cake-candles"></i></div>
+              <span style="font-size: 0.7rem; background: rgba(168,85,247,0.1); color: #a855f7; padding: 2px 8px; border-radius: 10px;">Proyecto Pivotado</span>
+            </div>
+            <h3>Alfombrin Landing Page (Dulce Enfoque)</h3>
+            <p>Desarrollo frontend interactivo originalmente concebido para servicios de limpieza, adaptado con éxito hacia el rubro de la repostería tras el cambio de modelo de negocio de la clienta. Prototipo optimizado para la conversión de pedidos.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+              <div style="display: flex; gap: 6px;"><span class="tech-tag">HTML5/CSS3</span><span class="tech-tag">Adaptabilidad</span></div>
+              <a href="https://github.com/Alphareone" target="_blank" style="color: var(--text-primary); font-size: 1.1rem;"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
         </div>
-        <h3 class="card-title">Ciberseguridad y SecOps</h3>
-        <p class="card-description">
-          Implementación de políticas de seguridad perimetral, análisis sistemático de amenazas, protección de datos y mitigación de vulnerabilidades en arquitecturas tecnológicas desacopladas.
+      </section>
+
+      <section id="future-projects" class="section-container">
+        <h2 class="section-title">Visión de Innovación <span class="text-gradient">Propia (AbcaLink)</span></h2>
+        <p style="color: var(--text-secondary); text-align: center; margin-top: -10px; margin-bottom: 45px; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+          Modelos de negocio e investigación de software independiente diseñados conceptualmente para ser desarrollados a futuro.
         </p>
-        <div class="card-actions-row">
-          <div class="card-tags">
-            <span>Ciberdefensa</span>
-            <span>Threat Analysis</span>
-            <span>Seguridad</span>
+        
+        <div class="projects-grid">
+          <div class="project-card" style="border-style: dashed; border-color: rgba(59, 130, 246, 0.35);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <div style="color: var(--accent-blue); font-size: 1.3rem;"><i class="fas fa-wallet"></i></div>
+              <span style="font-size: 0.7rem; background: rgba(14,165,227,0.1); color: var(--accent-blue); padding: 2px 8px; border-radius: 10px;">I+D AbcaLink</span>
+            </div>
+            <h3>FinancIA</h3>
+            <p>Evolución conceptual de una plataforma financiera personal gamificada. Diseñada para integrar capas de inteligencia artificial predictiva que analicen hábitos de consumo y automaticen planes de ahorro personalizados.</p>
+            <div style="display: flex; gap: 6px; margin-top: 15px;">
+              <span class="tech-tag">Inteligencia Artificial</span><span class="tech-tag">FinTech</span><span class="tech-tag">Gamificación</span>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Categoría 3: Gestión de Proyectos -->
-      <div class="project-card">
-        <div class="card-header">
-          <div class="icon-box blue-icon">
-            <i class="fas fa-tasks"></i>
+          <div class="project-card" style="border-style: dashed; border-color: rgba(168, 85, 247, 0.35);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <div style="color: #a855f7; font-size: 1.3rem;"><i class="fas fa-robot"></i></div>
+              <span style="font-size: 0.7rem; background: rgba(168,85,247,0.1); color: #a855f7; padding: 2px 8px; border-radius: 10px;">I+D AbcaLink</span>
+            </div>
+            <h3>ProtechAi</h3>
+            <p>Línea de investigación orientada al desarrollo de utilidades avanzadas de automatización y scripts inteligentes. Enfocado en la optimización y el despliegue de políticas de seguridad automatizadas para infraestructuras desacopladas.</p>
+            <div style="display: flex; gap: 6px; margin-top: 15px;">
+              <span class="tech-tag">Automatización</span><span class="tech-tag">SecOps</span><span class="tech-tag">AI Utilities</span>
+            </div>
           </div>
-          <span class="card-badge badge-blue">Gestión Estratégica</span>
         </div>
-        <h3 class="card-title">Project Management TI</h3>
-        <p class="card-description">
-          Planificación y control estratégico de proyectos de software y telecomunicaciones. Capacidad certificada para la estructuración de presupuestos, mitigación de riesgos y dirección mediante marcos ágiles.
+      </section>
+
+      <section id="hobbies" class="section-container">
+        <h2 class="section-title">Más Allá del <span class="text-gradient">Código</span></h2>
+        
+        <div class="projects-grid">
+          <div class="project-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <div style="color: #a855f7; font-size: 1.3rem;"><i class="fas fa-book-open"></i></div>
+              <span style="font-size: 0.7rem; background: rgba(168,85,247,0.1); color: #a855f7; padding: 2px 8px; border-radius: 10px;">Creatividad</span>
+            </div>
+            <h3>World-Building Narrativo</h3>
+            <p>Escritura de fantasía y diseño de universos literarios interconectados como <em>Zullys</em>, <em>El Sueño Eterno</em> y <em>Noche Eterna</em>. Modelado de esquemas de mitologías, jerarquías de personajes y sistemas de lore dinámicos.</p>
+            <div style="display: flex; gap: 6px; margin-top: 15px;">
+              <span class="tech-tag">Lore Design</span><span class="tech-tag">Escritura</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <div style="color: var(--accent-blue); font-size: 1.3rem;"><i class="fas fa-gamepad"></i></div>
+              <span style="font-size: 0.7rem; background: rgba(14,165,227,0.1); color: var(--accent-blue); padding: 2px 8px; border-radius: 10px;">Estrategia</span>
+            </div>
+            <h3>Gaming de Alta Competencia</h3>
+            <p>Entrenamiento táctico y analítico en entornos competitivos. Posicionamientos destacados con un Top 50 Global histórico en <em>Rules of Survival</em> y un Top 150 Nacional activo en <em>Blood Strike</em>, desarrollando la toma de decisiones bajo estrés.</p>
+            <div style="display: flex; gap: 6px; margin-top: 15px;">
+              <span class="tech-tag">Análisis Táctico</span><span class="tech-tag">Toma de Decisiones</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <div style="color: #a855f7; font-size: 1.3rem;"><i class="fas fa-music"></i></div>
+              <span style="font-size: 0.7rem; background: rgba(168,85,247,0.1); color: #a855f7; padding: 2px 8px; border-radius: 10px;">Audio Digital</span>
+            </div>
+            <h3>Producción & Composición Musical</h3>
+            <p>Creación autónoma de bandas sonoras conceptuales y portadas temáticas. Experimentación de estilos como el <em>melodic trap</em>, <em>western metal</em> y ambientes electrónicos atmosféricos mediante DAWs.</p>
+            <div style="display: flex; gap: 6px; margin-top: 15px;">
+              <span class="tech-tag">DAW</span><span class="tech-tag">Composición</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section-container">
+        <h2 class="section-title">Mi <span class="text-gradient">Trayectoria</span></h2>
+        <p style="color: var(--text-secondary); text-align: center; margin-top: -10px; margin-bottom: 55px; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+          La evolución de mi perfil: desde la disciplina operativa en escenarios críticos hasta la especialización en ingeniería de vanguardia.
         </p>
-        <div class="card-actions-row">
-          <div class="card-tags">
-            <span>Marcos Ágiles</span>
-            <span>Control de Riesgos</span>
-            <span>Gestión TI</span>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">LOGÍSTICA Y DISCIPLINA</div>
+            <div class="timeline-content">
+              <h3>Servicio Militar Conscripto (Roles Críticos)</h3>
+              <p>Despliegue operativo y administración de cadenas de suministro logísticas durante periodos de crisis sociales y sanitarias. Esta etapa consolidó las bases de mi resiliencia, liderazgo bajo presión extrema y una rigurosa estructura de trabajo orientada al cumplimiento de objetivos.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">GESTIÓN TECNOLÓGICA</div>
+            <div class="timeline-content">
+              <h3>Certificación Avanzada en Gestión de Proyectos TI</h3>
+              <p>Validación institucional en Duoc UC para liderar, presupuestar y mitigar riesgos en proyectos de software y telecomunicaciones. Integración de marcos de trabajo tradicionales y ágiles para asegurar la calidad y la escalabilidad del producto final.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">EXPERIENCIA PRÁCTICA</div>
+            <div class="timeline-content">
+              <h3>Desarrollo de Soluciones Integrales y Prototipado</h3>
+              <p>Construcción de repositorios públicos, diseño de arquitecturas backend para servicios de automatización y modelado de interfaces web adaptables para clientes reales, logrando pivotar requisitos comerciales con éxito hacia nuevos modelos de negocio.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">PRESENTE Y FUTURO</div>
+            <div class="timeline-content">
+              <h3>Ingeniería y Certificaciones Oficiales Cisco</h3>
+              <p>Fase de culminación académica en Ingeniería en Informática y Telecomunicaciones. Consolidación del perfil mediante la obtención de credenciales internacionales en redes (CCST Networking) y ciberdefensa (CCST Cybersecurity), proyectando soluciones de infraestructura segura bajo la marca AbcaLink.</p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Categoría 4: Fortalezas Operativas (Soft Skills) -->
-      <div class="project-card" style="grid-column: 1 / -1; max-width: 850px; margin: 0 auto; width: 100%; border-style: dashed; border-color: rgba(168, 85, 247, 0.25);">
-        <div class="card-header">
-          <div class="icon-box purple-icon">
-            <i class="fas fa-handshake"></i>
-          </div>
-          <span class="card-badge badge-purple">Fortalezas Destacadas</span>
-        </div>
-        <h3 class="card-title">Resiliencia Operativa y Liderazgo en Crisis</h3>
-        <p class="card-description">
-          Capacidad probada para coordinar tareas logísticas críticas y resolver problemas complejos bajo escenarios de alta presión y contingencia extrema, combinando disciplina táctica con una toma de decisiones analítica y asertiva.
-        </p>
-        <div class="card-actions-row">
-          <div class="card-tags">
-            <span>Liderazgo Operativo</span>
-            <span>Logística Crítica</span>
-            <span>Toma de Decisiones</span>
-            <span>Trabajo Bajo Presión</span>
-          </div>
-        </div>
-      </div>
+    </main>
 
-    </div>
-  </section>
+    <footer class="main-footer" style="text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.03); color: var(--text-secondary); font-size: 0.9rem;">
+      <p>&copy; 2026 Alfredo Castro Alarcón. Todos los derechos reservados. | AbcaLink Professional Suite</p>
+    </footer>
 
-  <!-- ==========================================
-       SECCIÓN 2: CERTIFICACIONES OFICIALES INTERNACIONALES
-       ========================================== -->
-  <section id="certifications" class="projects-section">
-    <h2 class="section-title">Certificaciones & <span class="text-gradient">Credenciales</span></h2>
-    <p style="color: var(--text-secondary); text-align: center; margin-top: -30px; margin-bottom: 55px; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-      Validaciones internacionales emitidas por Cisco y Certiport que avalan mis competencias técnicas en infraestructura, conectividad y ciberdefensa.
-    </p>
+  </div>
 
-    <div class="projects-grid">
-      
-      <!-- Credencial 1: CCST Networking -->
-      <div class="project-card" style="border: 1px solid rgba(14, 165, 233, 0.3); background: linear-gradient(135deg, rgba(14,165,233,0.03) 0%, rgba(0,0,0,0) 100%);">
-        <div class="card-header">
-          <div class="icon-box blue-icon">
-            <i class="fas fa-network-wired"></i>
-          </div>
-          <span class="card-badge badge-blue">Cisco Certified</span>
-        </div>
-        <h3 class="card-title">Técnico de Soporte Certificado de Cisco en Redes (CCST Networking)</h3>
-        <p class="card-description">
-          Credencial internacional verificada vía Credly. Certifica conocimientos sólidos en fundamentos de redes, direccionamiento IP, medios de transmisión, topologías, enrutamiento y diagnóstico de conectividad.
-        </p>
-        <div class="card-actions-row">
-          <span style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;">Vence: Jun 2031</span>
-          <a href="https://www.credly.com" target="_blank" class="link-btn">Verificar Credly <i class="fas fa-external-link-alt"></i></a>
-        </div>
-      </div>
-
-      <!-- Credencial 2: CCST Cybersecurity -->
-      <div class="project-card" style="border: 1px solid rgba(168, 85, 247, 0.3); background: linear-gradient(135deg, rgba(168,85,247,0.03) 0%, rgba(0,0,0,0) 100%);">
-        <div class="card-header">
-          <div class="icon-box purple-icon">
-            <i class="fas fa-shield-halved"></i>
-          </div>
-          <span class="card-badge badge-purple">Cisco Certified</span>
-        </div>
-        <h3 class="card-title">Técnico de Soporte Certificado en Ciberseguridad de Cisco (CCST Cybersecurity)</h3>
-        <p class="card-description">
-          Credencial internacional que valida principios fundamentales de seguridad, seguridad de redes, metodologías de análisis de amenazas, políticas de mitigación de riesgos y resguardo de datos perimetrales.
-        </p>
-        <div class="card-actions-row">
-          <span style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;">Vence: Jun 2031</span>
-          <a href="https://www.credly.com" target="_blank" class="link-btn">Verificar Credly <i class="fas fa-external-link-alt"></i></a>
-        </div>
-      </div>
-
-      <!-- Credencial 3: Certiport Network Security -->
-      <div class="project-card">
-        <div class="card-header">
-          <div class="icon-box blue-icon">
-            <i class="fas fa-user-lock"></i>
-          </div>
-          <span class="card-badge badge-blue">Pearson VUE</span>
-        </div>
-        <h3 class="card-title">Técnico de Soporte de Seguridad de Red (Certiport)</h3>
-        <p class="card-description">
-          Certificación oficial emitida por Certiport (empresa de Pearson VUE) que respalda competencias operativas aplicadas a arquitecturas de conectividad protegidas y entornos corporativos seguros.
-        </p>
-        <div class="card-actions-row">
-          <span style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;">Vence: Jun 2031</span>
-          <a href="https://www.credly.com" target="_blank" class="link-btn">Ver Credencial <i class="fas fa-external-link-alt"></i></a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- BLOQUE SECUNDARIO: LOGROS ACADÉMICOS DE NETACAD -->
-    <div style="margin-top: 50px; background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.04); padding: 30px; border-radius: 16px;">
-      <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
-        <i class="fas fa-graduation-cap" style="color: var(--accent-purple);"></i> Hitos de Aprendizaje de Cisco Networking Academy
-      </h3>
-      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 25px;">
-        Módulos y cursos oficiales completados satisfactoriamente dentro de la ruta profesional de NetAcad durante el año académico 2026:
-      </p>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
-        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; border-left: 3px solid #0ea5e3;">
-          <h4 style="font-size: 0.9rem; margin-bottom: 4px; color: var(--text-primary);">Conceptos Básicos de Redes</h4>
-          <span style="font-size: 0.75rem; color: var(--text-secondary);">Comunicaciones, Protocolos e Internet</span>
-        </div>
-        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; border-left: 3px solid #a855f7;">
-          <h4 style="font-size: 0.9rem; margin-bottom: 4px; color: var(--text-primary);">Defensa de la Red y SecOps</h4>
-          <span style="font-size: 0.75rem; color: var(--text-secondary);">Análisis de Amenazas y Salvaguardas</span>
-        </div>
-        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; border-left: 3px solid #0ea5e3;">
-          <h4 style="font-size: 0.9rem; margin-bottom: 4px; color: var(--text-primary);">Introducción a Cisco Packet Tracer</h4>
-          <span style="font-size: 0.75rem; color: var(--text-secondary);">Simulación y Modelado de Arquitecturas</span>
-        </div>
-        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; border-left: 3px solid #a855f7;">
-          <h4 style="font-size: 0.9rem; margin-bottom: 4px; color: var(--text-primary);">Introducción a la Ciberseguridad</h4>
-          <span style="font-size: 0.75rem; color: var(--text-secondary);">Insignia Verificada por Cisco Academies</span>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ==========================================
-       SECCIÓN 3: PROYECTOS DE AULA (DESARROLLO EN EQUIPO)
-       ========================================== -->
-  <section id="academic-projects" class="projects-section" style="border-top: 1px solid rgba(255, 255, 255, 0.03); padding-top: 60px;">
-    <h2 class="section-title">Desarrollos e Integraciones <span class="text-gradient">en Equipo</span></h2>
-    <p style="color: var(--text-secondary); text-align: center; margin-top: -30px; margin-bottom: 45px; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-      Soluciones de software construidas colaborativamente en el aula junto a mis compañeros de carrera, aplicando metodologías de integración real.
-    </p>
-    
-    <div class="projects-grid">
-      
-      <!-- Carbono App -->
-      <div class="project-card">
-        <div class="card-header">
-          <div class="icon-box purple-icon">
-            <i class="fas fa-leaf"></i>
-          </div>
-          <span class="card-badge badge-purple">Proyecto de Aula</span>
-        </div>
-        <h3 class="card-title">Carbono App</h3>
-        <p class="card-description">
-          Aplicación orientada al monitoreo de la huella ecológica institucional y control de recursos sostenibles. Desarrollada en equipo, la solución implementa la lógica de negocio básica para capturar datos e indicadores ambientales clave.
-        </p>
-        <div class="card-actions-row">
-          <div class="card-tags">
-            <span>Sustentabilidad</span>
-            <span>Trabajo en Equipo</span>
-          </div>
-          <a href="https://github.com/Alphareone" target="_blank" class="btn-card-repo" title="Ver Repositorio">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Edutech -->
-      <div class="project-card">
-        <div class="card-header">
-          <div class="icon-box purple-icon">
-            <i class="fas fa-cubes"></i>
-          </div>
-          <span class="card-badge badge-purple">Integración de Software</span>
-        </div>
-        <h3 class="card-title">Edutech Microservices</h3>
-        <p class="card-description">
-          Proyecto integrador Full-Stack enfocado en la arquitectura desacoplada. Se centra en la comunicación estructurada entre módulos mediante microservicios independientes, simulando el flujo de una plataforma educativa real.
-        </p>
-        <div class="card-actions-row">
-          <div class="card-tags">
-            <span>Microservicios</span>
-            <span>Full-Stack</span>
-          </div>
-          <a href="https://github.com/Alphareone" target="_blank" class="btn-card-repo" title="Ver Repositorio">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Conectavecino -->
-      <div class="project-card">
-        <div class="card-header">
-          <div class="icon-box purple-icon">
-            <i class="fas fa-users"></i>
-          </div>
-          <span class="card-badge badge-purple">Prototipo Frontend</span>
-        </div>
-        <h3 class="card-title">Conectavecino</h3>
-        <p class="card-description">
-          Prototipo de plataforma vecinal interactiva diseñada para robustecer la comunicación comunitaria. Interfaz limpia construida mediante maquetación semántica y hojas de estilo fluidas, incorporando dinamismo funcional interactivo básico.
-        </p>
-        <div class="card-actions-row">
-          <div class="card-tags">
-            <span>HTML5 / CSS3</span>
-            <span>JavaScript</span>
-          </div>
-          <a href="https://github.com/Alphareone" target="_blank" class="btn-card-repo" title="Ver Repositorio">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================
-       SECCIÓN 4: ANALYTICS & BIG DATA (ACTIVIDADES EVALUATIVAS)
-       ========================================== -->
-  <section id="big-data" class="projects-section" style="border-top: 1px solid rgba(255, 255, 255, 0.03); padding-top: 60px;">
-    <h2 class="section-title">Análisis de Datos & <span class="text-gradient">Big Data</span></h2>
-    <p style="color: var(--text-secondary); text-align: center; margin-top: -30px; margin-bottom: 45px; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-      Actividades evaluativas y laboratorios recientes de procesamiento de datos a gran escala, ejecutados cooperativamente en células de análisis.
-    </p>
-    
-    <div class="projects-grid">
-      
-      <!-- BigQuery & Power BI Analytics -->
-      <div class="project-card" style="grid-column: 1 / -1; max-width: 750px; margin: 0 auto; width: 100%;">
-        <div class="card-header">
-          <div class="icon-box blue-icon">
-            <i class="fas fa-chart-pie"></i>
-          </div>
-          <span class="card-badge badge-blue">Casos de Estudio</span>
-        </div>
-        <h3 class="card-title">Análisis de Negocios e Ingesta con Herramientas BI</h3>
-        <p class="card-description">
-          Procesamiento de datos mediante la escritura de consultas optimizadas en Google BigQuery para la extracción y depuración de métricas. Conexión de repositorios de datos hacia cuadros de mando interactivos en Power BI, enfocados en la detección de patrones críticos de negocio.
-        </p>
-        <div class="card-actions-row">
-          <div class="card-tags">
-            <span>Google BigQuery</span>
-            <span>Power BI</span>
-            <span>Célula de Datos</span>
-          </div>
-          <a href="https://github.com/Alphareone" target="_blank" class="btn-card-repo" title="Ver Repositorio">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================
-       SECCIÓN 5: SOLUCIONES WEB Y PROTOTIPADO (FREELANCE)
-       ========================================== -->
-  <section id="freelance-projects" class="projects-section" style="border-top: 1px solid rgba(255, 255, 255, 0.03); padding-top: 60px;">
-    <h2 class="section-title">Soluciones para <span class="text-gradient">Clientes Externos</span></h2>
-    
-    <div class="projects-grid">
-      
-      <!-- Global Mec -->
-      <div class="project-card">
-        <div class="card-header">
-          <div class="icon-box blue-icon">
-            <i class="fas fa-gears"></i>
-          </div>
-          <span class="card-badge badge-blue">Propuesta Comercial</span>
-        </div>
-        <h3 class="card-title">Global Mec Landing Page</h3>
-        <p class="card-description">
-          Arquitectura backend y base de datos estructural diseñada para soportar un sistema de gestión de servicios mecánicos y automotrices. Modelado como una solución escalable para el agendamiento y control de órdenes de trabajo.
-        </p>
-        <div class="card-actions-row">
-          <div class="card-tags">
-            <span>UI/UX</span>
-            <span>Base de Datos</span>
-          </div>
-          <a href="https://github.com/Alphareone" target="_blank" class="btn-card-repo" title="Ver Repositorio">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Alfombrin -->
-      <div class="project-card">
-        <div class="card-header">
-          <div class="icon-box purple-icon">
-            <i class="fas fa-cake-candles"></i>
-          </div>
-          <span class="card-badge badge-purple">Proyecto Pivotado</span>
-        </div>
-        <h3 class="card-title">Alfombrin Landing Page (Dulce Enfoque)</h3>
-        <p class="card-description">
-          Desarrollo frontend interactivo originalmente concebido para servicios de limpieza, adaptado con éxito hacia el rubro de la repostería tras el cambio de modelo de negocio de la clienta. Prototipo optimizado para la conversión de pedidos.
-        </p>
-        <div class="card-actions-row">
-          <div class="card-tags">
-            <span>HTML5/CSS3</span>
-            <span>Adaptabilidad</span>
-          </div>
-          <a href="https://github.com/Alphareone" target="_blank" class="btn-card-repo" title="Ver Repositorio">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================
-       SECCIÓN 6: LÍNEAS DE DESARROLLO FUTURO (I+D CONCEPTUAL PROPIO - ABCALINK)
-       ========================================== -->
-  <section id="future-projects" class="projects-section" style="border-top: 1px solid rgba(255, 255, 255, 0.03); padding-top: 60px;">
-    <h2 class="section-title">Visión de Innovación <span class="text-gradient">Propia (AbcaLink)</span></h2>
-    <p style="color: var(--text-secondary); text-align: center; margin-top: -30px; margin-bottom: 45px; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-      Modelos de negocio e investigación de software independiente diseñados conceptualmente para ser desarrollados a futuro.
-    </p>
-    
-    <div class="projects-grid">
-      
-      <!-- FinancIA -->
-      <div class="project-card" style="border-style: dashed; border-color: rgba(59, 130, 246, 0.35);">
-        <div class="card-header">
-          <div class="icon-box blue-icon">
-            <i class="fas fa-wallet"></i>
-          </div>
-          <span class="card-badge badge-blue">I+D AbcaLink</span>
-        </div>
-        <h3 class="card-title">FinancIA</h3>
-        <p class="card-description">
-          Evolución conceptual de una plataforma financiera personal gamificada (estilo Match). Diseñada para integrar capas de inteligencia artificial predictiva que analicen hábitos de consumo y automaticen planes de ahorro personalizados.
-        </p>
-        <div class="card-actions-row">
-          <div class="card-tags">
-            <span>Inteligencia Artificial</span>
-            <span>FinTech</span>
-            <span>Gamificación</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ProtechAi -->
-      <div class="project-card" style="border-style: dashed; border-color: rgba(168, 85, 247, 0.35);">
-        <div class="card-header">
-          <div class="icon-box purple-icon">
-            <i class="fas fa-robot"></i>
-          </div>
-          <span class="card-badge badge-purple">I+D AbcaLink</span>
-        </div>
-        <h3 class="card-title">ProtechAi</h3>
-        <p class="card-description">
-          Línea de investigación orientada al desarrollo de utilidades avanzadas de automatización y scripts inteligentes. Enfocado en la optimización y el despliegue de políticas de seguridad automatizadas para infraestructuras desacopladas.
-        </p>
-        <div class="card-actions-row">
-          <div class="card-tags">
-            <span>Automatización</span>
-            <span>SecOps</span>
-            <span>AI Utilities</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================
-       SECCIÓN 7: INTERESES Y HOBBIES
-       ========================================== -->
-  <section id="hobbies" class="projects-section" style="padding-top: 60px; padding-bottom: 90px; border-top: 1px solid rgba(255, 255, 255, 0.03);">
-    <h2 class="section-title">Más Allá del <span class="text-gradient">Código</span></h2>
-    
-    <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-      
-      <!-- Hobby 1: World-Building -->
-      <div class="project-card">
-        <div class="card-header">
-          <div class="icon-box purple-icon">
-            <i class="fas fa-book-open"></i>
-          </div>
-          <span class="card-badge badge-purple">Creatividad</span>
-        </div>
-        <h3 class="card-title">World-Building Narrativo</h3>
-        <p class="card-description">
-          Escritura de fantasía y diseño de universos literarios interconectados como <em>Zullys</em>, <em>El Sueño Eterno</em> y <em>Noche Eterna</em>. Modelado lógico de esquemas complejos de mitologías, jerarquías de personajes y sistemas de lore dinámicos.
-        </p>
-        <div class="card-actions-row">
-          <div class="card-tags">
-            <span>Lore Design</span>
-            <span>Escritura</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hobby 2: Gaming Competitivo -->
-      <div class="project-card">
-        <div class="card-header">
-          <div class="icon-box blue-icon">
-            <i class="fas fa-gamepad"></i>
-          </div>
-          <span class="card-badge badge-blue">Estrategia</span>
-        </div>
-        <h3 class="card-title">Gaming de Alta Competencia</h3>
-        <p class="card-description">
-          Entrenamiento táctico y analítico en entornos competitivos de ritmo rápido. Posicionamientos destacados con un Top 50 Global histórico en <em>Rules of Survival</em> y un Top 150 Nacional activo en <em>Blood Strike</em>, desarrollando toma de decisiones bajo estrés.
-        </p>
-        <div class="card-actions-row">
-          <div class="card-tags">
-            <span>Análisis Táctico</span>
-            <span>Toma de Decisiones</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hobby 3: Production Musical -->
-      <div class="project-card">
-        <div class="card-header">
-          <div class="icon-box purple-icon">
-            <i class="fas fa-music"></i>
-          </div>
-          <span class="card-badge badge-purple">Audio Digital</span>
-        </div>
-        <h3 class="card-title">Producción & Composición Musical</h3>
-        <p class="card-description">
-          Creación autónoma de bandas sonoras conceptuales y portadas musicales temáticas. Experimentación e integración de estilos como el <em>melodic trap</em>, <em>western metal</em> y ambientes electrónicos atmosféricos mediante estaciones de trabajo digitales.
-        </p>
-        <div class="card-actions-row">
-          <div class="card-tags">
-            <span>DAW</span>
-            <span>Composición</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================
-       SECCIÓN 8: TRAYECTORIA PROFESIONAL (TIMELINE EVOLUTIVO)
-       ========================================== -->
-  <section id="trajectory" class="trajectory-section" style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 90px;">
-    <h2 class="section-title">Mi <span class="text-gradient">Trayectoria</span></h2>
-    <p style="color: var(--text-secondary); text-align: center; margin-top: -30px; margin-bottom: 55px; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-      La evolución de mi perfil: desde la disciplina operativa en escenarios críticos hasta la especialización en ingeniería de vanguardia.
-    </p>
-    
-    <div class="timeline-container">
-      
-      <!-- Hito 1: Servicio Militar Logístico -->
-      <div class="timeline-item">
-        <div class="timeline-dot dot-blue"></div>
-        <span class="timeline-category text-blue">LOGÍSTICA Y DISCIPLINA</span>
-        <h3 class="timeline-title">Servicio Militar Conscripto (Roles Críticos)</h3>
-        <p class="timeline-text">
-          Despliegue operativo y administración de cadenas de suministro logísticas durante periodos de crisis sociales y sanitarias. Esta etapa consolidó las bases de mi resiliencia, liderazgo bajo presión extrema y una rigurosa estructura de trabajo orientada al cumplimiento de objetivos.
-        </p>
-      </div>
-
-      <!-- Hito 2: Especialidad TI -->
-      <div class="timeline-item">
-        <div class="timeline-dot dot-purple"></div>
-        <span class="timeline-category text-purple">GESTIÓN TECNOLÓGICA</span>
-        <h3 class="timeline-title">Certificación Avanzada en Gestión de Proyectos TI</h3>
-        <p class="timeline-text">
-          Validación institucional en Duoc UC para liderar, presupuestar y mitigar riesgos en proyectos de software y telecomunicaciones. Integración de marcos de trabajo tradicionales y ágiles para asegurar la calidad y la escalabilidad del producto final.
-        </p>
-      </div>
-
-      <!-- Hito 3: Desarrollo y Freelance -->
-      <div class="timeline-item">
-        <div class="timeline-dot dot-blue"></div>
-        <span class="timeline-category text-blue">EXPERIENCIA PRÁCTICA</span>
-        <h3 class="timeline-title">Desarrollo de Soluciones Integrales y Prototipado</h3>
-        <p class="timeline-text">
-          Construcción de repositorios públicos, diseño de arquitecturas backend para servicios de automatización y modelado de interfaces web adaptables para clientes reales, logrando pivotar requisitos comerciales con éxito hacia nuevos modelos de negocio.
-        </p>
-      </div>
-
-      <!-- Hito 4: Consolidación Profesional -->
-      <div class="timeline-item">
-        <div class="timeline-dot dot-purple"></div>
-        <span class="timeline-category text-purple">PRESENTE Y FUTURO</span>
-        <h3 class="timeline-title">Ingeniería y Certificaciones Oficiales Cisco</h3>
-        <p class="timeline-text">
-          Fase de culminación académica en Ingeniería en Informática y Telecomunicaciones. Consolidación del perfil mediante la obtención de credenciales internacionales en redes (CCST Networking) y ciberdefensa (CCST Cybersecurity), proyectando soluciones de infraestructura segura bajo la marca AbcaLink.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
+  <script src="./assets/js/sections/loader.js"></script>
+  <script src="./assets/js/sections/theme.js"></script>
+  <script src="./assets/js/sections/navigation.js"></script>
+  <script src="./assets/js/sections/about.js"></script>
+  <script src="./assets/js/sections/projects.js"></script>
+  <script src="./assets/js/sections/certifications.js"></script>
+  <script src="./assets/js/sections/experience.js"></script>
   <script src="./assets/js/main.js"></script>
 
-<script>
-document.addEventListener('DOMContentLoaded',()=>{
- const loader=document.getElementById('boot-loader');
- const status=document.getElementById('boot-status');
- const btn=document.getElementById('sound-toggle');
- const audio=document.getElementById('boot-audio');
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const wrapper = document.querySelector('.nav-dropdown-wrapper');
+      const dropdown = document.querySelector('.nav-dropdown');
+      const arrow = wrapper ? wrapper.querySelector('.fa-chevron-down') : null;
 
- let enabled=localStorage.getItem('portfolio_sound')==='on';
+      if (wrapper && dropdown) {
+        // Desktop Hover triggers
+        wrapper.addEventListener('mouseenter', () => {
+          dropdown.style.display = 'block';
+          setTimeout(() => { dropdown.style.opacity = '1'; }, 10);
+          if(arrow) arrow.style.transform = 'rotate(180deg)';
+        });
 
- btn.textContent=enabled?'🔊 Sound':'🔇 Sound';
+        wrapper.addEventListener('mouseleave', () => {
+          dropdown.style.opacity = '0';
+          setTimeout(() => { dropdown.style.display = 'none'; }, 200);
+          if(arrow) arrow.style.transform = 'rotate(0deg)';
+        });
 
- btn.onclick=()=>{
-   enabled=!enabled;
-   localStorage.setItem('portfolio_sound',enabled?'on':'off');
-   btn.textContent=enabled?'🔊 Sound':'🔇 Sound';
- };
+        // Mobile fallback toggle
+        wrapper.addEventListener('click', (e) => {
+          if (window.innerWidth <= 1024) {
+            const isVisible = dropdown.style.display === 'block';
+            dropdown.style.display = isVisible ? 'none' : 'block';
+            dropdown.style.opacity = isVisible ? '0' : '1';
+            if(arrow) arrow.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
+          }
+        });
 
- const steps=[
- 'Loading certifications...',
- 'Syncing projects...',
- 'Establishing cloud connection...',
- 'Portfolio ready.'
- ];
+        // Dropdown link polish styles
+        dropdown.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            dropdown.style.display = 'none';
+            dropdown.style.opacity = '0';
+            if(arrow) arrow.style.transform = 'rotate(0deg)';
+          });
+          link.addEventListener('mouseenter', () => {
+            link.style.background = 'rgba(14, 165, 227, 0.08)';
+            link.style.color = 'var(--accent-blue)';
+          });
+          link.addEventListener('mouseleave', () => {
+            link.style.background = 'transparent';
+            link.style.color = 'rgba(255, 255, 255, 0.8)';
+          });
+        });
+      }
+    });
+  </script>
 
- let i=0;
- const t=setInterval(()=>{
-   if(i<steps.length){status.textContent=steps[i++];}
- },500);
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      const loader=document.getElementById('boot-loader');
+      const status=document.getElementById('boot-status');
+      const btn=document.getElementById('sound-toggle');
+      const audio=document.getElementById('boot-audio');
 
- setTimeout(()=>{
-   clearInterval(t);
-   if(enabled){ audio.play().catch(()=>{}); }
-   loader.style.opacity='0';
-   setTimeout(()=>loader.remove(),800);
- },2600);
-});
-  
-</script>
+      let enabled=localStorage.getItem('portfolio_sound')==='on';
+      if(btn) {
+        btn.textContent=enabled?'🔊 Sound':'🔇 Sound';
+        btn.onclick=()=>{
+          enabled=!enabled;
+          localStorage.setItem('portfolio_sound',enabled?'on':'off');
+          btn.textContent=enabled?'🔊 Sound':'🔇 Sound';
+        };
+      }
+
+      const steps=[
+        'Loading certifications...',
+        'Syncing projects...',
+        'Establishing cloud connection...',
+        'Portfolio ready.'
+      ];
+
+      let i=0;
+      const t=setInterval(()=>{
+        if(i<steps.length && status){status.textContent=steps[i++];}
+      },500);
+
+      setTimeout(()=> {
+        clearInterval(t);
+        if(enabled && audio){ audio.play().catch(()=>{}); }
+        if(loader) {
+          loader.style.opacity='0';
+          setTimeout(()=>loader.remove(),800);
+        }
+      },2600);
+    });
+  </script>
+
+  <script>
+    const canvas = document.getElementById('cyber-matrix-bg');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth || document.documentElement.clientWidth;
+      canvas.height = window.innerHeight || document.documentElement.clientHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const chars = "01XF4A92".split("");
+    const fontSize = 15; 
+    const columnSpacing = Math.floor(fontSize * 2.4); 
+    const columns = Math.ceil(canvas.width / columnSpacing);
+
+    const streams = [];
+    for (let i = 0; i < columns; i++) {
+      streams[i] = {
+        x: i * columnSpacing,
+        y: Math.random() * -canvas.height, 
+        speed: 1.2 + Math.random() * 1.6, 
+        maxLength: 12 + Math.floor(Math.random() * 8), 
+        currentChars: []
+      };
+    }
+
+    function drawMatrix() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.font = '600 ' + fontSize + 'px monospace';
+
+      for (let i = 0; i < streams.length; i++) {
+        const stream = streams[i];
+        
+        if (Math.random() > 0.8 || stream.currentChars.length === 0) {
+          stream.currentChars.push(chars[Math.floor(Math.random() * chars.length)]);
+          if (stream.currentChars.length > stream.maxLength) {
+            stream.currentChars.shift();
+          }
+        }
+
+        for (let j = 0; j < stream.currentChars.length; j++) {
+          const charY = stream.y - (stream.currentChars.length - j) * (fontSize * 0.95);
+          
+          if (charY > 0 && charY < canvas.height) {
+            const baseOpacity = j / stream.currentChars.length;
+            
+            if (j === stream.currentChars.length - 1) {
+              ctx.fillStyle = `rgba(6, 182, 212, ${baseOpacity * 0.8})`;
+            } else if (j > stream.currentChars.length - 4) {
+              ctx.fillStyle = `rgba(14, 165, 227, ${baseOpacity * 0.35})`;
+            } else {
+              ctx.fillStyle = `rgba(14, 165, 227, ${baseOpacity * 0.08})`;
+            }
+            
+            ctx.fillText(stream.currentChars[j], stream.x, charY);
+          }
+        }
+
+        stream.y += stream.speed;
+
+        if (stream.y - (stream.maxLength * fontSize) > canvas.height) {
+          stream.y = Math.random() * -200; 
+          stream.speed = 1.2 + Math.random() * 1.6;
+        }
+      }
+    }
+
+    setInterval(drawMatrix, 33);
+  </script>
 </body>
 </html>
