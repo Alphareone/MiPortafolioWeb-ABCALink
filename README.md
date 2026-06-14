@@ -1,4 +1,4 @@
-# ⚡ MiPortafolioWeb-ABCALink - "NEOALF Ultimate Portfolio" (V2.0.0)
+# ⚡ MiPortafolioWeb-ABCALink - "Ultimate Portfolio" (V2.0.0)
 
 ¡Bienvenido a la evolución de mi portafolio web profesional! Este proyecto representa una reconstrucción arquitectónica total bajo la marca **AbcaLink**. Se ha transformado un sitio monolítico en una plataforma **modular, desacoplada y de ultra alto rendimiento**, diseñada específicamente para exhibir mis competencias en Ingeniería en Informática y Telecomunicaciones, Gestión de Proyectos TI y Arquitecturas de Ciberdefensa.
 
@@ -28,7 +28,7 @@ Manteniendo mi identidad visual original, esta versión eleva la experiencia UI/
 El código se encuentra organizado bajo el principio de *Separación de Concernientes (Separation of Concerns)* para permitir un mantenimiento ágil y despliegues modulares:
 
 ```text
-neoalf_ultimate_portfolio/
+ABCALink_ultimate_portfolio/
 ├── core/             # Estilos base, variables globales de diseño y reseteos CSS.
 ├── components/       # Elementos de interfaz reutilizables (botones, tarjetas, navbar).
 ├── sections/         # Estilos y lógicas de JavaScript divididos por secciones independientes.
