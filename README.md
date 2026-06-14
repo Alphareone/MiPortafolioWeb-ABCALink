@@ -1,60 +1,37 @@
-# AbcaLink - Portafolio Profesional Premium (V1.0.0)
+# ⚡ NEOALF Ultimate Portfolio (V2.0.0)
 
-¡Bienvenido a mi portafolio web profesional! Este proyecto ha sido diseñado y desarrollado desde cero como una plataforma modular, responsiva y de alto rendimiento para exhibir mis competencias en **Ingeniería en Informática y Telecomunicaciones**, **Gestión de Proyectos TI** y **Arquitecturas de Ciberdefensa**.
+¡Bienvenido a la evolución de mi portafolio web profesional! Este proyecto representa una reconstrucción arquitectónica total bajo la marca **AbcaLink**. Se ha transformado un sitio monolítico en una plataforma **modular, desacoplada y de ultra alto rendimiento**, diseñada específicamente para exhibir mis competencias en Ingeniería en Informática y Telecomunicaciones, Gestión de Proyectos TI y Arquitecturas de Ciberdefensa.
 
-La arquitectura del código está estructurada de forma desacoplada y escalable, permitiendo la integración futura de nuevas vistas, módulos de análisis de datos y servicios automatizados sin alterar la estabilidad del núcleo estético y operativo.
-
----
-
-## Características del Proyecto
-
-*   **Arquitectura Modular & Escalable:** Estructura limpia basada en componentes web nativos de alta velocidad.
-*   **Diseño Interactivo Premium:** Interfaz oscura moderna (*Glassmorphism*) con transiciones fluidas, soporte nativo para *Light/Dark Mode* y optimización de rendimiento UI/UX.
-*   **Navegación Dinámica Asertiva:** Menú con detector de intersección inteligente (*Intersection Observer API*) para una experiencia de usuario fluida.
-*   **Enfoque ATS-Friendly:** Contenido optimizado con palabras clave técnicas estratégicas para superar los filtros automatizados de reclutamiento TI.
+Manteniendo mi identidad visual original, esta versión eleva la experiencia UI/UX a un estándar premium con una estética cyberpunk/futurista sin comprometer las mejores prácticas de desarrollo de software.
 
 ---
 
-## Stack Tecnológico Utilizado
+## 🚀 Características Clave de la V2.0.0
 
-*   **Frontend Core:** HTML5 semántico y CSS3 avanzado (Variables globales, CSS Grid, Flexbox).
-*   **Lógica de Interfaz:** JavaScript Vanilla (ES6+) nativo (Cero dependencias externas o librerías pesadas para garantizar la máxima velocidad de carga).
-*   **Iconografía y Tipografía:** FontAwesome e Inter Font Face.
-
----
-
-## Secciones Implementadas (Fase 1)
-
-1.  **Perfil Profesional (Hero Section):** Propuesta de valor unificada orientada al mercado tecnológico.
-2.  **Certificaciones Oficiales Internacionales:** Validación de credenciales de la industria emitidas por **Cisco** y **Certiport** (**CCST Networking** y **CCST Cybersecurity** válidas hasta 2031)[cite: 2, 3].
-3.  **Habilidades & Competencias:** Matriz estratégica que equilibra *Hard Skills* (Redes, Ciberdefensa, Gestión TI)[cite: 1, 2, 3] con *Soft Skills* clave (Resiliencia Operativa y Liderazgo en escenarios críticos).
-4.  **Proyectos de Aula:** Soluciones académicas avanzadas (Modelado de sistemas y prototipado).
-5.  **Freelance & Casos Reales:** Despliegues prácticos interactivos orientados a clientes reales del sector de servicios.
-6.  **I+D Futuro / Proyectos en Desarrollo:** Ventana de escalabilidad hacia soluciones en desarrollo (como la aplicación gamificada de finanzas personales PFM).
-7.  **Trayectoria Evolutiva:** Línea de tiempo cronológica que narra la transición desde la disciplina operativa logística hasta la ingeniería tecnológica.
+*   **Arquitectura Modular Escalable:** Estructura limpia basada en componentes web nativos, separando de forma estricta los estilos globales, las vistas de sección y las lógicas de interacción.
+*   **Diseño Cyberpunk Premium:** Interfaz oscura moderna utilizando técnicas de *Glassmorphism*, efectos de brillo (*glow*) futuristas y transiciones fluidas con soporte nativo para Light/Dark Mode.
+*   **Efectos Matrix Dinámicos:** Aislamiento de scripts de animación de alto rendimiento que no interfieren con la velocidad de carga ni con la accesibilidad de la página.
+*   **Enfoque ATS-Friendly:** Contenido estratégicamente optimizado con palabras clave técnicas para superar con éxito los filtros automatizados de reclutamiento en el sector TI.
 
 ---
 
-## Plan de Escalabilidad Futura (Roadmap)
+## 🛠️ Stack Tecnológico
 
-Este portafolio fue construido pensando en el futuro. Las próximas iteraciones incluirán:
-*   [ ] **Módulo de Automatización Backend:** Conectividad con APIs en vivo y scripts de automatización de infraestructura bajo la marca AbcaLink.
-*   [ ] **Dashboard de Análisis de Datos:** Sección integrada con gráficos dinámicos para visualización de métricas de red y bases de datos.
-*   [ ] **Sección de Hobbies Interactiva:** Expansión del bloque creativo para proyectos de world-building y diseño de sonido temático.
-
----
+*   **Frontend Core:** HTML5 semántico y CSS3 avanzado (Variables globales, CSS Grid, Flexbox, Custom Keyframes).
+*   **Lógica de Interfaz:** JavaScript Vanilla (ES6+) nativo. Cero dependencias externas o librerías pesadas para garantizar la máxima velocidad de carga y un Score perfecto en Core Web Vitals.
+*   **Iconografía y Tipografía:** FontAwesome & Inter Font Face.
 
 ---
 
-## Autor
+## 📂 Arquitectura del Proyecto
 
-*   **Alfredo Benjamín Castro Alarcón**
-*   *Estudiante de último año de Ingeniería en Informática y Telecomunicaciones | Especialista en Gestión de Proyectos TI*.
-*   **Duoc UC — Sede Viña del Mar** (Escuela de Informática y Telecomunicaciones)[cite: 1].
-*   Región de Valparaíso, Chile.
-*   Certificaciones Oficiales: Cisco CCST Networking & Cybersecurity[cite: 2, 3].
+El código se encuentra organizado bajo el principio de *Separación de Concernientes (Separation of Concerns)* para permitir un mantenimiento ágil y despliegues modulares:
 
----
-
----
-_Desplegado de forma estática e independiente a través de GitHub Pages._
+```text
+neoalf_ultimate_portfolio/
+├── core/             # Estilos base, variables globales de diseño y reseteos CSS.
+├── components/       # Elementos de interfaz reutilizables (botones, tarjetas, navbar).
+├── sections/         # Estilos y lógicas de JavaScript divididos por secciones independientes.
+├── animations/       # Scripts y CSS específicos para efectos visuales (Matrix rain, glows).
+├── data/             # Archivos de configuración o JSON con información dinámica.
+└── assets/           # Recursos estáticos optimizados (Imágenes corporativas, logos).
