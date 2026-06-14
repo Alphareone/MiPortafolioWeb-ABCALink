@@ -1,0 +1,276 @@
+/* RESET GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-main);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+/* ==========================================================================
+   SISTEMA DE FLUJO DE DATOS FUTURISTA (ESTILO MATRIX DIGITAL)
+   ========================================================================== */
+
+/* 1. Malla base fija */
+.cyber-ambient-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: linear-gradient(rgba(14, 165, 227, 0.015) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(14, 165, 227, 0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* 2. El Efecto Matrix Digital Corregido */
+.cyber-ambient-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  
+  /* Creamos micro-líneas verticales simulando hilos de datos cayendo */
+  background: linear-gradient(
+    90deg,
+    rgba(14, 165, 227, 0.02) 0%,
+    transparent 2%,
+    rgba(168, 85, 247, 0.01) 4%,
+    transparent 6%,
+    rgba(6, 182, 212, 0.02) 8%,
+    transparent 10%
+  );
+  background-size: 200px 100%; /* Divide la pantalla en columnas de datos */
+}
+
+/* 3. Inyección de la máscara de movimiento (La lluvia de código) */
+.cyber-ambient-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(14, 167, 227, 0.138) 40%,
+    rgba(6, 181, 212, 0.192) 50%,
+    rgba(2, 4, 10, 0.9) 55%, /* Este bloque corta la luz creando el efecto "gota de datos" */
+    transparent 100%
+  );
+  background-size: 100% 400px; /* Tamaño del bloque de código descendente */
+  animation: matrixRain 8s linear infinite;
+}
+
+/* Animación forzada de caída de datos */
+@keyframes matrixRain {
+  0% {
+    background-position: 0 -400px;
+  }
+  100% {
+    background-position: 0 800px;
+  }
+}
+
+/* Brillo cuántico de fondo para que el "Matrix" tenga profundidad */
+body::before {
+  content: '';
+  position: fixed;
+  bottom: -20%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(169, 85, 247, 0) 0%, transparent 70%);
+  z-index: -2;
+  pointer-events: none;
+}
+/* CONTAINER ESTÁNDAR */
+.section-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 100px 24px;
+  position: relative;
+}
+
+/* TÍTULOS DE SECCIÓN CON LÍNEA DE FLUJO */
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 48px;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-blue), transparent);
+}
+
+/* NAVBAR GLASSMORPHISM MEJORADA */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--bg-dark-90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-card);
+  transition: var(--transition-smooth);
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-family: monospace;
+}
+
+.text-gradient {
+  background: var(--gradient-cyber);
+  background-size: 300% /* Animación de flujo en el logo */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: cyberFlow 6s linear infinite;
+}
+
+@keyframes cyberFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.nav-link::before {
+  content: '[';
+  color: var(--accent-blue);
+  margin-right: 4px;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+.nav-link::after {
+  content: ']';
+  color: var(--accent-blue);
+  margin-left: 4px;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.nav-link:hover::before, .nav-link.active::before,
+.nav-link:hover::after, .nav-link.active::after {
+  opacity: 1;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-theme {
+  background: none;
+  border: 1px solid var(--border-card);
+  color: var(--text-secondary);
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.btn-theme:hover {
+  background: var(--bg-card);
+  color: var(--accent-cyan);
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+.btn-contact {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--accent-blue);
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-smooth);
+}
+
+.btn-contact:hover {
+  background: rgba(14, 165, 227, 0.08);
+  box-shadow: 0 0 15px rgba(14, 165, 227, 0.2);
+}
+
+/* FOOTER */
+.main-footer {
+  border-top: 1px solid var(--border-card);
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-family: monospace;
+}
+
+/* SCROLLBAR PERSONALIZADA */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-card);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}

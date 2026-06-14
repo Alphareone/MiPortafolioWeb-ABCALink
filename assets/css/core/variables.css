@@ -1,0 +1,16 @@
+
+:root{
+    --bg-primary:#020617;
+    --bg-secondary:#0f172a;
+    --primary:#38bdf8;
+    --secondary:#8b5cf6;
+    --accent:#00ffff;
+    --text:#f8fafc;
+    --glass:rgba(255,255,255,0.05);
+
+    --shadow-neon:
+        0 0 10px rgba(0,255,255,0.4),
+        0 0 20px rgba(0,255,255,0.2);
+
+    --font-main:'Segoe UI',sans-serif;
+}

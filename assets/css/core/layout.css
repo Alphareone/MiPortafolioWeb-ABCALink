@@ -1,0 +1,21 @@
+
+body{
+    background:
+        radial-gradient(circle at top,#0f172a,#020617 70%);
+    color:var(--text);
+    font-family:var(--font-main);
+    min-height:100vh;
+    position:relative;
+}
+
+.section-container{
+    width:min(1200px,90%);
+    margin:auto;
+    padding:6rem 0;
+}
+
+.glass{
+    background:var(--glass);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,0.08);
+}

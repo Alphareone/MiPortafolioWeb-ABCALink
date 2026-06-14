@@ -1,0 +1,42 @@
+:root {
+  /* Paleta de Colores de AbcaLink */
+  --bg-dark: #02040a; /* Oscuro profundo estilo terminal */
+  --bg-dark-90: rgba(2, 4, 10, 0.85);
+  --bg-card: rgba(255, 255, 255, 0.02);
+  --border-card: rgba(255, 255, 255, 0.05);
+  
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-muted: #4b5563;
+  
+  --accent-blue: #0ea5e3;
+  --accent-purple: #a855f7;
+  --accent-cyan: #06b6d4; /* Color extra para destellos tecnológicos */
+  --gradient-primary: linear-gradient(135deg, #0ea5e3 0%, #a855f7 100%);
+  --gradient-cyber: linear-gradient(90deg, #0ea5e3, #06b6d4, #a855f7, #0ea5e3);
+
+  /* Malla Tecnológica de Respaldo */
+  --cyber-grid: linear-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+
+  /* Tipografía y Layout */
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  --max-width: 1200px;
+  
+  /* Animaciones y Transiciones */
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  --radius-md: 8px;
+  --radius-lg: 16px;
+}
+
+body.light-theme {
+  --bg-dark: #f8fafc;
+  --bg-dark-90: rgba(248, 250, 252, 0.95);
+  --bg-card: #ffffff;
+  --border-card: rgba(0, 0, 0, 0.06);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --cyber-grid: linear-gradient(rgba(0, 0, 0, 0.01) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.01) 1px, transparent 1px);
+}

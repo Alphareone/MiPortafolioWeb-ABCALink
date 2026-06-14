@@ -1,0 +1,68 @@
+#boot-loader {
+  position: fixed;
+  inset: 0;
+  background-color: #050816; /* Forzado nativo al inicio */
+  background-color: var(--bg-dark);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.boot-panel {
+  text-align: center;
+  width: 90%;
+  max-width: 420px;
+  font-family: var(--font-main);
+}
+
+.boot-panel h1 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.boot-panel p {
+  color: var(--accent-purple);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.progress-container {
+  height: 4px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--gradient-primary);
+  animation: bootProgress 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+#boot-status {
+  color: var(--text-muted);
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+@keyframes bootProgress {
+  to { width: 100%; }
+}
+
+/* ESCUDO DE SEGURIDAD: Libera la pantalla a los 3s si el JS falla */
+#boot-loader {
+  animation: fallbackBypass 0.5s ease 3s forwards;
+}
+@keyframes fallbackBypass {
+  to { opacity: 0; visibility: hidden; pointer-events: none; }
+}
