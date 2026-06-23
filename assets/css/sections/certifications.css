@@ -155,6 +155,54 @@
   box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
 }
 /* Ajuste responsivo rápido para pantallas muy pequeñas */
+/* Estilos para el contenedor del Acordeón */
+.certs-accordion {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px dashed rgba(168, 85, 247, 0.3);
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  transition: var(--transition-smooth, all 0.3s ease);
+}
+
+.certs-accordion[open] {
+  border-style: solid;
+  border-color: var(--border-card);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+/* El botón disparador */
+.certs-accordion-trigger {
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  list-style: none; /* Elimina la flecha nativa de HTML */
+}
+
+/* Eliminar flecha nativa en navegadores basados en Webkit (Safari/Chrome) */
+.certs-accordion-trigger::-webkit-details-marker {
+  display: none;
+}
+
+.certs-accordion-trigger:hover {
+  background: rgba(168, 85, 247, 0.04);
+  color: #a855f7;
+}
+
+/* Animación de la flecha personalizada */
+.certs-accordion-trigger .arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.certs-accordion[open] .certs-accordion-trigger .arrow-icon {
+  transform: rotate(180deg);
+  color: #a855f7;
+}
 @media (max-width: 480px) {
   .cert-card {
     flex-direction: column;
