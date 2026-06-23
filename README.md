@@ -20,8 +20,8 @@ Manteniendo mi identidad visual original, esta versión eleva la experiencia UI/
 *   **Frontend Core:** HTML5 semántico y CSS3 avanzado (Variables globales, CSS Grid, Flexbox, Custom Keyframes).
 *   **Lógica de Interfaz:** JavaScript Vanilla (ES6+) nativo. Cero dependencias externas o librerías pesadas para garantizar la máxima velocidad de carga y un Score perfecto en Core Web Vitals.
 *   **Iconografía y Tipografía:** FontAwesome & Inter Font Face.
-
----
+*   code Sa@j?TUn+R@FMq2.
+  --
 
 ## 📂 Arquitectura del Proyecto
 
