@@ -1,0 +1,170 @@
+<div class="dropdown-container" style="max-width: 1200px; margin: 0 auto 30px auto; text-align: left;">
+    <!-- Encabezado Interactivo de la Terminal -->
+    <button class="skills-map-trigger" onclick="toggleDropdown(this)" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; font-family: monospace; border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 8px 8px 0 0; background-color: rgba(13, 17, 39, 0.6); color: #fff;">
+        <span><i class="fa-solid fa-terminal" style="color: var(--accent-color); margin-right: 10px;"></i>Lista de certificaciones y credenciales</span>
+        <i class="fa-solid fa-chevron-down"></i>
+    </button>
+
+    <!-- Contenido Desplegable: Bóveda Completa de Certificaciones -->
+    <div class="dropdown-content" style="background-color: rgba(5, 7, 15, 0.90); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 0 0 8px 8px; backdrop-filter: blur(10px);">
+        <div class="folder-header" style="background-color: rgba(255, 255, 255, 0.02); padding: 12px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+            <p style="color: var(--text-muted); font-size: 12px; font-family: monospace;"> --- Sincronización completa: 9 Credenciales globales de Credly + 1 Especialización Universitaria validadas.</p>
+        </div>
+        
+        <!-- Grilla de Tarjetas -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; padding: 25px;">
+            
+            <!-- TARJETA 1: CCST Cybersecurity -->
+            <div class="cert-interactive-card" style="background: rgba(13, 17, 39, 0.6); border: 1px solid rgba(6, 182, 212, 0.15); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; transition: all 0.3s ease;">
+                <div style="width: 100%;">
+                    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px; min-height: 220px;">
+                        <!-- padding: 0px y object-fit: cover para expandir la insignia -->
+                        <img src="https://images.credly.com/images/fb647b84-b5ee-44fc-979f-24dd67bf6703/linkedin_thumb_image.png" alt="Cisco CCST Cybersecurity" loading="lazy" style="width: 130px; height: 130px; object-fit: cover; background: #ffffff; border-radius: 50%; padding: 0px; box-shadow: 0 0 15px rgba(6, 182, 212, 0.4); border: 2px solid rgba(6, 182, 212, 0.3);">
+                    </div>
+                    <h3 style="font-size: 14px; font-family: monospace; color: #fff; margin-bottom: 8px; font-weight: bold; line-height: 1.4;">Cisco Certified Support Technician<br><span style="color: #06b6d4;">Cybersecurity</span></h3>
+                    <p style="font-size: 11px; font-family: monospace; color: #94a3b8; margin-bottom: 15px;">Vence: Junio 5, 2031</p>
+                </div>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://www.credly.com/badges/016ec402-7eb1-4bc6-8f2f-2ad8ca5d5d55" target="_blank" class="cert-btn-effect btn-credly" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;"><i class="fa-solid fa-award"></i> Credly</a>
+                    <a href="../docs/ Certified Support Technician Cybersecurity certificate.pdf" target="_blank" class="cert-btn-effect btn-pdf" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+                </div>
+            </div>
+
+            <!-- TARJETA 2: CCST Networking -->
+            <div class="cert-interactive-card" style="background: rgba(13, 17, 39, 0.6); border: 1px solid rgba(6, 182, 212, 0.15); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; transition: all 0.3s ease;">
+                <div style="width: 100%;">
+                    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px; min-height: 220px;">
+                        <img src="https://images.credly.com/images/c60f9007-64bb-42ed-869b-e1f05d6d77f2/linkedin_thumb_image.png" alt="Cisco CCST Networking" loading="lazy" style="width: 130px; height: 130px; object-fit: cover; background: #ffffff; border-radius: 50%; padding: 0px; box-shadow: 0 0 15px rgba(34, 211, 238, 0.4); border: 2px solid rgba(34, 211, 238, 0.3);">
+                    </div>
+                    <h3 style="font-size: 14px; font-family: monospace; color: #fff; margin-bottom: 8px; font-weight: bold; line-height: 1.4;">Cisco Certified Support Technician<br><span style="color: #22d3ee;">Networking</span></h3>
+                    <p style="font-size: 11px; font-family: monospace; color: #94a3b8; margin-bottom: 15px;">Vence: Junio 5, 2031</p>
+                </div>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://www.credly.com/badges/1a4c2b06-57a3-4959-89cf-cf7c902063a7" target="_blank" class="cert-btn-effect btn-credly" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;"><i class="fa-solid fa-award"></i> Credly</a>
+                    <a href="../docs/Cisco Certified Support Technician Networking certificate (1).pdf" target="_blank" class="cert-btn-effect btn-pdf" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+                </div>
+            </div>
+
+            <!-- TARJETA 3: CertiProf Cybersecurity Foundation -->
+            <div class="cert-interactive-card" style="background: rgba(13, 17, 39, 0.6); border: 1px solid rgba(168, 85, 247, 0.15); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; transition: all 0.3s ease;">
+                <div style="width: 100%;">
+                    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px; min-height: 220px;">
+                        <img src="https://images.credly.com/images/9d73c699-69f6-4272-ac89-0a46c9e5dbd7/linkedin_thumb_blob" alt="CertiProf Cyber Security Foundation" loading="lazy" style="width: 130px; height: 130px; object-fit: cover; background: #ffffff; border-radius: 50%; padding: 0px; box-shadow: 0 0 15px rgba(168, 85, 247, 0.4); border: 2px solid rgba(168, 85, 247, 0.3);">
+                    </div>
+                    <h3 style="font-size: 14px; font-family: monospace; color: #fff; margin-bottom: 8px; font-weight: bold; line-height: 1.4;">Cyber Security Foundation<br><span style="color: #a855f7;">Professional Certificate - CSFPC™</span></h3>
+                    <p style="font-size: 11px; font-family: monospace; color: #94a3b8; margin-bottom: 15px;">Vence: Julio 1, 2029</p>
+                </div>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://www.credly.com/badges/dc622e17-fc35-4eac-a7e3-624585776a82" target="_blank" class="cert-btn-effect btn-credly" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;"><i class="fa-solid fa-award"></i> Credly</a>
+                    <a href="../docs/Certificate-AlfredBenjamin-CastroAlarcon.pdf" target="_blank" class="cert-btn-effect btn-pdf" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+                </div>
+            </div>
+
+            <!-- TARJETA 4: CertiProf Generative AI -->
+            <div class="cert-interactive-card" style="background: rgba(13, 17, 39, 0.6); border: 1px solid rgba(168, 85, 247, 0.15); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; transition: all 0.3s ease;">
+                <div style="width: 100%;">
+                    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px; min-height: 220px;">
+                        <img src="https://images.credly.com/images/29c57e47-76c3-48bf-9bb1-ba85a42fad13/linkedin_thumb_blob" alt="CertiProf Generative AI" loading="lazy" style="width: 130px; height: 130px; object-fit: cover; background: #ffffff; border-radius: 50%; padding: 0px; box-shadow: 0 0 15px rgba(192, 132, 252, 0.4); border: 2px solid rgba(192, 132, 252, 0.3);">
+                    </div>
+                    <h3 style="font-size: 14px; font-family: monospace; color: #fff; margin-bottom: 8px; font-weight: bold; line-height: 1.4;">Generative AI Foundation<br><span style="color: #c084fc;">Professional Certificate - GAIPC™</span></h3>
+                    <p style="font-size: 11px; font-family: monospace; color: #94a3b8; margin-bottom: 15px;">Vence: Julio 1, 2029</p>
+                </div>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://www.credly.com/badges/e44e999b-9982-4626-b504-6a12e1b1d43b" target="_blank" class="cert-btn-effect btn-credly" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;"><i class="fa-solid fa-award"></i> Credly</a>
+                    <a href="../docs/Certificate-Alfredo-Castro.pdf" target="_blank" class="cert-btn-effect btn-pdf" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+                </div>
+            </div>
+
+            <!-- TARJETA 5: NetAcad Introduction to Cybersecurity (Mantiene formato cuadrado original) -->
+            <div class="cert-interactive-card" style="background: rgba(13, 17, 39, 0.6); border: 1px solid rgba(74, 222, 128, 0.15); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; transition: all 0.3s ease;">
+                <div style="width: 100%;">
+                    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px; min-height: 220px;">
+                        <img src="https://images.credly.com/images/af8c6b4e-fc31-47c4-8dcb-eb7a2065dc5b/linkedin_thumb_I2CS__1_.png" alt="Introduction to Cybersecurity" loading="lazy" style="width: 150px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(74, 222, 128, 0.3));">
+                    </div>
+                    <h3 style="font-size: 14px; font-family: monospace; color: #fff; margin-bottom: 8px; font-weight: bold; line-height: 1.4;">Introduction to Cybersecurity<br><span style="color: #4ade80;">Cisco Networking Academy</span></h3>
+                    <p style="font-size: 11px; font-family: monospace; color: #94a3b8; margin-bottom: 15px;">Emitido: Abril 27, 2026</p>
+                </div>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://www.credly.com/badges/bdd44d07-48ad-41e4-b8ef-862072ba34cc" target="_blank" rel="noopener" class="cert-btn-effect btn-credly" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;"><i class="fa-solid fa-award"></i> Credly</a>
+                    <a href="../docs/Introduction_to_Cybersecurity_certificate_alf-castro-duocuc-cl_4244578c-cb59-4660-baa1-5b7862450765.pdf" target="_blank" class="cert-btn-effect btn-pdf" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+                </div>
+            </div>
+
+            <!-- TARJETA 7: NetAcad Networking Basics (Mantiene formato cuadrado original) -->
+            <div class="cert-interactive-card" style="background: rgba(13, 17, 39, 0.6); border: 1px solid rgba(6, 182, 212, 0.15); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; transition: all 0.3s ease;">
+                <div style="width: 100%;">
+                    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px; min-height: 220px;">
+                        <img src="https://images.credly.com/images/5bdd6a39-3e03-4444-9510-ecff80c9ce79/linkedin_thumb_image.png" alt="Networking Basics" loading="lazy" style="width: 150px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.3));">
+                    </div>
+                    <h3 style="font-size: 14px; font-family: monospace; color: #fff; margin-bottom: 8px; font-weight: bold; line-height: 1.4;">Networking Basics<br><span style="color: #06b6d4;">Cisco Networking Academy</span></h3>
+                    <p style="font-size: 11px; font-family: monospace; color: #94a3b8; margin-bottom: 15px;">Emitido: Junio 15, 2026</p>
+                </div>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://www.credly.com/badges/d47a9e74-875e-4f39-a1e6-9dce13f66be2/public_url" target="_blank" rel="noopener" class="cert-btn-effect btn-credly" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;"><i class="fa-solid fa-award"></i> Credly</a>
+                    <a href="#" class="cert-btn-effect btn-pdf" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px; opacity: 0.5;"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+                </div>
+            </div>
+
+            <!-- TARJETA 8: NetAcad Devices & Config (Mantiene formato cuadrado original) -->
+            <div class="cert-interactive-card" style="background: rgba(13, 17, 39, 0.6); border: 1px solid rgba(6, 182, 212, 0.15); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; transition: all 0.3s ease;">
+                <div style="width: 100%;">
+                    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px; min-height: 220px;">
+                        <img src="https://images.credly.com/images/88316fe8-5651-4e61-a6be-5be1558f049e/linkedin_thumb_image.png" alt="Networking Devices and Initial Configuration" loading="lazy" style="width: 150px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.3));">
+                    </div>
+                    <h3 style="font-size: 14px; font-family: monospace; color: #fff; margin-bottom: 8px; font-weight: bold; line-height: 1.4;">Networking Devices and Initial Configuration<br><span style="color: #06b6d4;">Cisco Networking Academy</span></h3>
+                    <p style="font-size: 11px; font-family: monospace; color: #94a3b8; margin-bottom: 15px;">Emitido: Julio 5, 2026</p>
+                </div>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://www.credly.com/badges/1c51eca3-da9d-4702-ac16-c7c6cc0a85f1" target="_blank" rel="noopener" class="cert-btn-effect btn-credly" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;"><i class="fa-solid fa-award"></i> Credly</a>
+                    <a href="#" class="cert-btn-effect btn-pdf" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px; opacity: 0.5;"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+                </div>
+            </div>
+
+            <!-- TARJETA: Network Security Support Technician -->
+            <div class="cert-interactive-card" style="background: rgba(13, 17, 39, 0.6); border: 1px solid rgba(6, 182, 212, 0.15); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; transition: all 0.3s ease;">
+                <div style="width: 100%;">
+                    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px; min-height: 220px;">
+                        <img src="https://images.credly.com/images/25a0a5f5-56db-4560-8549-14889b105db2/linkedin_thumb_image.png" alt="Network Security Support Technician" loading="lazy" style="width: 130px; height: 130px; object-fit: cover; background: #ffffff; border-radius: 50%; padding: 0px; box-shadow: 0 0 15px rgba(6, 182, 212, 0.4); border: 2px solid rgba(6, 182, 212, 0.3);">
+                    </div>
+                    <h3 style="font-size: 14px; font-family: monospace; color: #fff; margin-bottom: 8px; font-weight: bold; line-height: 1.4;">Network Security Support Technician<br><span style="color: #22d3ee;">Certiport, a Pearson VUE business</span></h3>
+                    <p style="font-size: 11px; font-family: monospace; color: #94a3b8; margin-bottom: 15px;">Vence: Junio 5, 2031</p>
+                </div>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://www.credly.com/badges/f2dc98a2-8ef3-4667-a8a8-23df9e75b4da" target="_blank" rel="noopener" class="cert-btn-effect btn-credly" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;"><i class="fa-solid fa-award"></i> Credly</a>
+                </div>
+            </div>
+
+            <!-- TARJETA: CertiProf Lifelong Learning -->
+            <div class="cert-interactive-card" style="background: rgba(13, 17, 39, 0.6); border: 1px solid rgba(168, 85, 247, 0.15); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; transition: all 0.3s ease;">
+                <div style="width: 100%;">
+                    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px; min-height: 220px;">
+                        <img src="https://images.credly.com/images/21e16d4d-d2df-46e6-9098-526caab49e63/linkedin_thumb_blob" alt="Lifelong Learning" loading="lazy" style="width: 130px; height: 130px; object-fit: cover; background: #ffffff; border-radius: 50%; padding: 0px; box-shadow: 0 0 15px rgba(168, 85, 247, 0.4); border: 2px solid rgba(168, 85, 247, 0.3);">
+                    </div>
+                    <h3 style="font-size: 14px; font-family: monospace; color: #fff; margin-bottom: 8px; font-weight: bold; line-height: 1.4;">Lifelong Learning<br><span style="color: #a855f7;">CertiProf</span></h3>
+                    <p style="font-size: 11px; font-family: monospace; color: #94a3b8; margin-bottom: 15px;">Emitido: Junio 19, 2024</p>
+                </div>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://www.credly.com/badges/8163b845-c995-4664-90c8-94a1f74f884d" target="_blank" rel="noopener" class="cert-btn-effect btn-credly" style="flex: 1; text-align: center; font-family: monospace; font-size: 11px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;">
+                        <i class="fa-solid fa-award"></i> Credly
+                    </a>
+                </div>
+            </div>
+
+            <!-- TARJETA 10: Especialización Duoc UC -->
+            <div class="cert-interactive-card" style="background: rgba(13, 17, 39, 0.6); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; transition: all 0.3s ease;">
+                <div style="width: 100%;">
+                    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px; min-height: 220px;">
+                        <img src="/img/selloCertDuoc.png" alt="Sello Especialización Duoc UC" style="width: 130px; height: 130px; object-fit: cover; background: #ffffff; border-radius: 50%; padding: 0px; box-shadow: 0 0 15px rgba(239, 68, 68, 0.3); border: 2px solid rgba(239, 68, 68, 0.2);">
+                    </div>
+                    <h3 style="font-size: 14px; font-family: monospace; color: #fff; margin-bottom: 8px; font-weight: bold; line-height: 1.4;">Certificado Especialización<br><span style="color: #ffa600;">Gestión de Proyectos TI</span></h3>
+                    <p style="font-size: 11px; font-family: monospace; color: #94a3b8; margin-bottom: 15px;">Sede Viña del Mar | Junio 2026</p>
+                </div>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://certificadovalida.duoc.cl/ValidacionCertificados" target="_blank" class="cert-btn-effect btn-valida" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;"><i class="fa-solid fa-signature"></i> Validar</a>
+                    <a href="docs/Certificado210320879.pdf" target="_blank" class="cert-btn-effect btn-pdf" style="flex: 1; text-align: center; font-family: monospace; font-size: 12px; text-decoration: none; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 5px;"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
